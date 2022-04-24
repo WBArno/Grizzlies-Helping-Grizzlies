@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grizzlies_Helping_Grizzlies
 {
-    public partial class Form1 : Form
+    public partial class GHGForm : Form
     {
-        public Form1()
+        public GHGForm()
         {
             InitializeComponent();
         }
@@ -21,10 +21,12 @@ namespace Grizzlies_Helping_Grizzlies
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // GHGForm
             // 
             this.ClientSize = new System.Drawing.Size(989, 646);
-            this.Name = "Form1";
+            this.Font = new System.Drawing.Font("Yu Mincho", 11F);
+            this.Name = "GHGForm";
+            this.Text = "Grizzlies Helping Grizzlies";
             this.ResumeLayout(false);
 
         }

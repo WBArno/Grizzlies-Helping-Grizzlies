@@ -1,6 +1,6 @@
 ﻿namespace Grizzlies_Helping_Grizzlies
 {
-    partial class Form1
+    partial class GHGForm
     {
         /// <summary>
         /// Required designer variable.
