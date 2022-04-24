@@ -17,6 +17,10 @@ namespace Grizzlies_Helping_Grizzlies
         {
             InitializeComponent();
 
+
+            // Hiding tabs
+            tabPageViewDonors.Hide();
+            tabPageViewDonations.Hide();
         }
 
         Donors dr = new Donors(); // Blank Donors init for Method access. Should probably keep methods in another file.
@@ -32,13 +36,13 @@ namespace Grizzlies_Helping_Grizzlies
         {
             if (dr.SanityCheck(comboBoxDrType.Text, textBoxDrFName.Text, textBoxDrLName.Text, textBoxDrCompany.Text,
                     textBoxDrEmail.Text, textBoxDrPNumber.Text, textBoxDrAddress.Text, textBoxDrCity.Text, textBoxDrState.Text,
-                    textBoxDrZip.Text, checkBoxAnon.Checked)) 
+                    textBoxDrZip2.Text, checkBoxAnon.Checked)) 
             {
                 donorNumber += 1;
 
                 Donors DrObj = new Donors(comboBoxDrType.Text, textBoxDrFName.Text, textBoxDrLName.Text, textBoxDrCompany.Text,
                     textBoxDrEmail.Text, textBoxDrPNumber.Text, textBoxDrAddress.Text, textBoxDrCity.Text, textBoxDrState.Text,
-                    textBoxDrZip.Text, checkBoxAnon.Checked, donorNumber);
+                    textBoxDrZip2.Text, checkBoxAnon.Checked, donorNumber);
                 donorsBindingSource2.Add(DrObj);
                   clearDonorFields();
             }
@@ -56,7 +60,7 @@ namespace Grizzlies_Helping_Grizzlies
             textBoxDrAddress.Clear();
             textBoxDrCity.Clear();
             textBoxDrState.Clear();
-            textBoxDrZip.Clear();
+            textBoxDrZip2.Clear();
             labelDrCompany.Hide();
             textBoxDrCompany.Hide();
         }

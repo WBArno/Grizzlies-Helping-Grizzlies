@@ -14,7 +14,7 @@ namespace Grizzlies_Helping_Grizzlies
         public string DonorLastName { get; set; }
         public string DonorCompanyName { get; set; }
         public string DonorEmail { get; set; }
-        public int DonorPhoneNumber { get; set; }
+        public long DonorPhoneNumber { get; set; }
         public string DonorAddress { get; set; }
         public string DonorCity { get; set; }
         public string DonorState { get; set; }
@@ -43,7 +43,7 @@ namespace Grizzlies_Helping_Grizzlies
             string donorState, string donorZip, bool anonymous, int donorNumber)
         {
             DonorType = donorType;
-            DonorPhoneNumber = Convert.ToInt32(donorPhoneNumber);
+            DonorPhoneNumber = Convert.ToInt64(donorPhoneNumber);
             Anonymous = anonymous;
             DonorNumber = donorNumber;
             DonorFirstName = donorFirstName;
@@ -53,7 +53,7 @@ namespace Grizzlies_Helping_Grizzlies
             DonorAddress = donorAddress;
             DonorCity = donorCity;
             DonorState = donorState;
-            DonorZip = Convert.ToInt32(donorZip);
+            DonorZip = Convert.ToInt16(donorZip);
         }
 
 

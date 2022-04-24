@@ -33,32 +33,31 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageAddDonors = new System.Windows.Forms.TabPage();
             this.buttonDrClear = new System.Windows.Forms.Button();
-            this.buttonDrSubmit = new System.Windows.Forms.Button();
             this.comboBoxDrType = new System.Windows.Forms.ComboBox();
-            this.checkBoxAnon = new System.Windows.Forms.CheckBox();
-            this.labelDrType = new System.Windows.Forms.Label();
-            this.textBoxDrZip = new System.Windows.Forms.TextBox();
-            this.labelDrCompany = new System.Windows.Forms.Label();
-            this.textBoxDrState = new System.Windows.Forms.TextBox();
-            this.labelDrLName = new System.Windows.Forms.Label();
-            this.textBoxDrAddress = new System.Windows.Forms.TextBox();
-            this.labelDrFName = new System.Windows.Forms.Label();
-            this.textBoxDrCity = new System.Windows.Forms.TextBox();
-            this.labelDrEmail = new System.Windows.Forms.Label();
+            this.buttonDrSubmit = new System.Windows.Forms.Button();
             this.textBoxDrPNumber = new System.Windows.Forms.TextBox();
+            this.labelDrEmail = new System.Windows.Forms.Label();
             this.labelDrPNumber = new System.Windows.Forms.Label();
-            this.textBoxDrEmail = new System.Windows.Forms.TextBox();
-            this.labelDrAddress = new System.Windows.Forms.Label();
-            this.textBoxDrCompany = new System.Windows.Forms.TextBox();
-            this.labelDrCity = new System.Windows.Forms.Label();
-            this.textBoxDrLName = new System.Windows.Forms.TextBox();
-            this.labelDrState = new System.Windows.Forms.Label();
-            this.textBoxDrFName = new System.Windows.Forms.TextBox();
+            this.checkBoxAnon = new System.Windows.Forms.CheckBox();
+            this.textBoxDrCity = new System.Windows.Forms.TextBox();
             this.labelDrZip = new System.Windows.Forms.Label();
+            this.textBoxDrEmail = new System.Windows.Forms.TextBox();
+            this.labelDrType = new System.Windows.Forms.Label();
+            this.labelDrFName = new System.Windows.Forms.Label();
+            this.textBoxDrFName = new System.Windows.Forms.TextBox();
+            this.labelDrAddress = new System.Windows.Forms.Label();
+            this.textBoxDrAddress = new System.Windows.Forms.TextBox();
+            this.labelDrState = new System.Windows.Forms.Label();
+            this.textBoxDrCompany = new System.Windows.Forms.TextBox();
+            this.labelDrCompany = new System.Windows.Forms.Label();
+            this.labelDrLName = new System.Windows.Forms.Label();
+            this.textBoxDrLName = new System.Windows.Forms.TextBox();
+            this.labelDrCity = new System.Windows.Forms.Label();
+            this.textBoxDrState = new System.Windows.Forms.TextBox();
+            this.tabPageViewDonors = new System.Windows.Forms.TabPage();
             this.dataGridDonor = new System.Windows.Forms.DataGridView();
             this.DonorID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageAddDonations = new System.Windows.Forms.TabPage();
-            this.tabPageViewDonors = new System.Windows.Forms.TabPage();
             this.tabPageViewDonations = new System.Windows.Forms.TabPage();
             this.anonymousDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.donorTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,11 +71,13 @@
             this.donorStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorZipDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxDrZip = new System.Windows.Forms.NumericUpDown();
             this.tabControl.SuspendLayout();
             this.tabPageAddDonors.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDonor)).BeginInit();
             this.tabPageViewDonors.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDonor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxDrZip)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -94,6 +95,7 @@
             // 
             // tabPageAddDonors
             // 
+            this.tabPageAddDonors.Controls.Add(this.textBoxDrZip);
             this.tabPageAddDonors.Controls.Add(this.buttonDrClear);
             this.tabPageAddDonors.Controls.Add(this.comboBoxDrType);
             this.tabPageAddDonors.Controls.Add(this.buttonDrSubmit);
@@ -108,7 +110,6 @@
             this.tabPageAddDonors.Controls.Add(this.labelDrFName);
             this.tabPageAddDonors.Controls.Add(this.textBoxDrFName);
             this.tabPageAddDonors.Controls.Add(this.labelDrAddress);
-            this.tabPageAddDonors.Controls.Add(this.textBoxDrZip);
             this.tabPageAddDonors.Controls.Add(this.textBoxDrAddress);
             this.tabPageAddDonors.Controls.Add(this.labelDrState);
             this.tabPageAddDonors.Controls.Add(this.textBoxDrCompany);
@@ -127,7 +128,7 @@
             // 
             // buttonDrClear
             // 
-            this.buttonDrClear.Location = new System.Drawing.Point(549, 312);
+            this.buttonDrClear.Location = new System.Drawing.Point(549, 295);
             this.buttonDrClear.Name = "buttonDrClear";
             this.buttonDrClear.Size = new System.Drawing.Size(103, 57);
             this.buttonDrClear.TabIndex = 22;
@@ -135,18 +136,9 @@
             this.buttonDrClear.UseVisualStyleBackColor = true;
             this.buttonDrClear.Click += new System.EventHandler(this.buttonDrClear_Click);
             // 
-            // buttonDrSubmit
-            // 
-            this.buttonDrSubmit.Location = new System.Drawing.Point(231, 312);
-            this.buttonDrSubmit.Name = "buttonDrSubmit";
-            this.buttonDrSubmit.Size = new System.Drawing.Size(103, 57);
-            this.buttonDrSubmit.TabIndex = 21;
-            this.buttonDrSubmit.Text = "Submit";
-            this.buttonDrSubmit.UseVisualStyleBackColor = true;
-            this.buttonDrSubmit.Click += new System.EventHandler(this.buttonDrSubmit_Click);
-            // 
             // comboBoxDrType
             // 
+            this.comboBoxDrType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDrType.FormattingEnabled = true;
             this.comboBoxDrType.Items.AddRange(new object[] {
             "Individual",
@@ -155,18 +147,75 @@
             this.comboBoxDrType.Name = "comboBoxDrType";
             this.comboBoxDrType.Size = new System.Drawing.Size(250, 36);
             this.comboBoxDrType.TabIndex = 0;
-            this.comboBoxDrType.Text = "Individual";
             this.comboBoxDrType.SelectedIndexChanged += new System.EventHandler(this.comboBoxDrType_SelectedIndexChanged);
+            // 
+            // buttonDrSubmit
+            // 
+            this.buttonDrSubmit.Location = new System.Drawing.Point(225, 295);
+            this.buttonDrSubmit.Name = "buttonDrSubmit";
+            this.buttonDrSubmit.Size = new System.Drawing.Size(103, 57);
+            this.buttonDrSubmit.TabIndex = 21;
+            this.buttonDrSubmit.Text = "Submit";
+            this.buttonDrSubmit.UseVisualStyleBackColor = true;
+            this.buttonDrSubmit.Click += new System.EventHandler(this.buttonDrSubmit_Click);
+            // 
+            // textBoxDrPNumber
+            // 
+            this.textBoxDrPNumber.Location = new System.Drawing.Point(612, 100);
+            this.textBoxDrPNumber.Name = "textBoxDrPNumber";
+            this.textBoxDrPNumber.Size = new System.Drawing.Size(251, 43);
+            this.textBoxDrPNumber.TabIndex = 15;
+            // 
+            // labelDrEmail
+            // 
+            this.labelDrEmail.AutoSize = true;
+            this.labelDrEmail.Location = new System.Drawing.Point(92, 100);
+            this.labelDrEmail.Name = "labelDrEmail";
+            this.labelDrEmail.Size = new System.Drawing.Size(68, 28);
+            this.labelDrEmail.TabIndex = 5;
+            this.labelDrEmail.Text = "Email";
+            // 
+            // labelDrPNumber
+            // 
+            this.labelDrPNumber.AutoSize = true;
+            this.labelDrPNumber.Location = new System.Drawing.Point(444, 103);
+            this.labelDrPNumber.Name = "labelDrPNumber";
+            this.labelDrPNumber.Size = new System.Drawing.Size(162, 28);
+            this.labelDrPNumber.TabIndex = 6;
+            this.labelDrPNumber.Text = "Phone Number";
             // 
             // checkBoxAnon
             // 
             this.checkBoxAnon.AutoSize = true;
-            this.checkBoxAnon.Location = new System.Drawing.Point(604, 255);
+            this.checkBoxAnon.Location = new System.Drawing.Point(492, 257);
             this.checkBoxAnon.Name = "checkBoxAnon";
             this.checkBoxAnon.Size = new System.Drawing.Size(259, 32);
             this.checkBoxAnon.TabIndex = 20;
             this.checkBoxAnon.Text = "Register Anonymously";
             this.checkBoxAnon.UseVisualStyleBackColor = true;
+            // 
+            // textBoxDrCity
+            // 
+            this.textBoxDrCity.Location = new System.Drawing.Point(612, 149);
+            this.textBoxDrCity.Name = "textBoxDrCity";
+            this.textBoxDrCity.Size = new System.Drawing.Size(251, 43);
+            this.textBoxDrCity.TabIndex = 16;
+            // 
+            // labelDrZip
+            // 
+            this.labelDrZip.AutoSize = true;
+            this.labelDrZip.Location = new System.Drawing.Point(54, 201);
+            this.labelDrZip.Name = "labelDrZip";
+            this.labelDrZip.Size = new System.Drawing.Size(106, 28);
+            this.labelDrZip.TabIndex = 10;
+            this.labelDrZip.Text = "ZIP Code";
+            // 
+            // textBoxDrEmail
+            // 
+            this.textBoxDrEmail.Location = new System.Drawing.Point(165, 97);
+            this.textBoxDrEmail.Name = "textBoxDrEmail";
+            this.textBoxDrEmail.Size = new System.Drawing.Size(251, 43);
+            this.textBoxDrEmail.TabIndex = 14;
             // 
             // labelDrType
             // 
@@ -177,12 +226,54 @@
             this.labelDrType.TabIndex = 1;
             this.labelDrType.Text = "Donor Type";
             // 
-            // textBoxDrZip
+            // labelDrFName
             // 
-            this.textBoxDrZip.Location = new System.Drawing.Point(165, 244);
-            this.textBoxDrZip.Name = "textBoxDrZip";
-            this.textBoxDrZip.Size = new System.Drawing.Size(251, 43);
-            this.textBoxDrZip.TabIndex = 19;
+            this.labelDrFName.AutoSize = true;
+            this.labelDrFName.Location = new System.Drawing.Point(38, 51);
+            this.labelDrFName.Name = "labelDrFName";
+            this.labelDrFName.Size = new System.Drawing.Size(122, 28);
+            this.labelDrFName.TabIndex = 4;
+            this.labelDrFName.Text = "First Name";
+            // 
+            // textBoxDrFName
+            // 
+            this.textBoxDrFName.Location = new System.Drawing.Point(165, 48);
+            this.textBoxDrFName.Name = "textBoxDrFName";
+            this.textBoxDrFName.Size = new System.Drawing.Size(251, 43);
+            this.textBoxDrFName.TabIndex = 11;
+            // 
+            // labelDrAddress
+            // 
+            this.labelDrAddress.AutoSize = true;
+            this.labelDrAddress.Location = new System.Drawing.Point(4, 152);
+            this.labelDrAddress.Name = "labelDrAddress";
+            this.labelDrAddress.Size = new System.Drawing.Size(155, 28);
+            this.labelDrAddress.TabIndex = 7;
+            this.labelDrAddress.Text = "Street Address";
+            // 
+            // textBoxDrAddress
+            // 
+            this.textBoxDrAddress.Location = new System.Drawing.Point(165, 146);
+            this.textBoxDrAddress.Name = "textBoxDrAddress";
+            this.textBoxDrAddress.Size = new System.Drawing.Size(251, 43);
+            this.textBoxDrAddress.TabIndex = 17;
+            // 
+            // labelDrState
+            // 
+            this.labelDrState.AutoSize = true;
+            this.labelDrState.Location = new System.Drawing.Point(544, 201);
+            this.labelDrState.Name = "labelDrState";
+            this.labelDrState.Size = new System.Drawing.Size(62, 28);
+            this.labelDrState.TabIndex = 9;
+            this.labelDrState.Text = "State";
+            // 
+            // textBoxDrCompany
+            // 
+            this.textBoxDrCompany.Location = new System.Drawing.Point(612, 2);
+            this.textBoxDrCompany.Name = "textBoxDrCompany";
+            this.textBoxDrCompany.Size = new System.Drawing.Size(251, 43);
+            this.textBoxDrCompany.TabIndex = 13;
+            this.textBoxDrCompany.Visible = false;
             // 
             // labelDrCompany
             // 
@@ -194,13 +285,6 @@
             this.labelDrCompany.Text = "Company Name";
             this.labelDrCompany.Visible = false;
             // 
-            // textBoxDrState
-            // 
-            this.textBoxDrState.Location = new System.Drawing.Point(612, 195);
-            this.textBoxDrState.Name = "textBoxDrState";
-            this.textBoxDrState.Size = new System.Drawing.Size(251, 43);
-            this.textBoxDrState.TabIndex = 18;
-            // 
             // labelDrLName
             // 
             this.labelDrLName.AutoSize = true;
@@ -210,87 +294,6 @@
             this.labelDrLName.TabIndex = 3;
             this.labelDrLName.Text = "Last Name";
             // 
-            // textBoxDrAddress
-            // 
-            this.textBoxDrAddress.Location = new System.Drawing.Point(165, 146);
-            this.textBoxDrAddress.Name = "textBoxDrAddress";
-            this.textBoxDrAddress.Size = new System.Drawing.Size(698, 43);
-            this.textBoxDrAddress.TabIndex = 17;
-            // 
-            // labelDrFName
-            // 
-            this.labelDrFName.AutoSize = true;
-            this.labelDrFName.Location = new System.Drawing.Point(38, 51);
-            this.labelDrFName.Name = "labelDrFName";
-            this.labelDrFName.Size = new System.Drawing.Size(122, 28);
-            this.labelDrFName.TabIndex = 4;
-            this.labelDrFName.Text = "First Name";
-            // 
-            // textBoxDrCity
-            // 
-            this.textBoxDrCity.Location = new System.Drawing.Point(165, 195);
-            this.textBoxDrCity.Name = "textBoxDrCity";
-            this.textBoxDrCity.Size = new System.Drawing.Size(251, 43);
-            this.textBoxDrCity.TabIndex = 16;
-            // 
-            // labelDrEmail
-            // 
-            this.labelDrEmail.AutoSize = true;
-            this.labelDrEmail.Location = new System.Drawing.Point(92, 100);
-            this.labelDrEmail.Name = "labelDrEmail";
-            this.labelDrEmail.Size = new System.Drawing.Size(68, 28);
-            this.labelDrEmail.TabIndex = 5;
-            this.labelDrEmail.Text = "Email";
-            // 
-            // textBoxDrPNumber
-            // 
-            this.textBoxDrPNumber.Location = new System.Drawing.Point(612, 100);
-            this.textBoxDrPNumber.Name = "textBoxDrPNumber";
-            this.textBoxDrPNumber.Size = new System.Drawing.Size(251, 43);
-            this.textBoxDrPNumber.TabIndex = 15;
-            // 
-            // labelDrPNumber
-            // 
-            this.labelDrPNumber.AutoSize = true;
-            this.labelDrPNumber.Location = new System.Drawing.Point(444, 103);
-            this.labelDrPNumber.Name = "labelDrPNumber";
-            this.labelDrPNumber.Size = new System.Drawing.Size(162, 28);
-            this.labelDrPNumber.TabIndex = 6;
-            this.labelDrPNumber.Text = "Phone Number";
-            // 
-            // textBoxDrEmail
-            // 
-            this.textBoxDrEmail.Location = new System.Drawing.Point(165, 97);
-            this.textBoxDrEmail.Name = "textBoxDrEmail";
-            this.textBoxDrEmail.Size = new System.Drawing.Size(251, 43);
-            this.textBoxDrEmail.TabIndex = 14;
-            // 
-            // labelDrAddress
-            // 
-            this.labelDrAddress.AutoSize = true;
-            this.labelDrAddress.Location = new System.Drawing.Point(4, 149);
-            this.labelDrAddress.Name = "labelDrAddress";
-            this.labelDrAddress.Size = new System.Drawing.Size(155, 28);
-            this.labelDrAddress.TabIndex = 7;
-            this.labelDrAddress.Text = "Street Address";
-            // 
-            // textBoxDrCompany
-            // 
-            this.textBoxDrCompany.Location = new System.Drawing.Point(612, 2);
-            this.textBoxDrCompany.Name = "textBoxDrCompany";
-            this.textBoxDrCompany.Size = new System.Drawing.Size(251, 43);
-            this.textBoxDrCompany.TabIndex = 13;
-            this.textBoxDrCompany.Visible = false;
-            // 
-            // labelDrCity
-            // 
-            this.labelDrCity.AutoSize = true;
-            this.labelDrCity.Location = new System.Drawing.Point(106, 198);
-            this.labelDrCity.Name = "labelDrCity";
-            this.labelDrCity.Size = new System.Drawing.Size(53, 28);
-            this.labelDrCity.TabIndex = 8;
-            this.labelDrCity.Text = "City";
-            // 
             // textBoxDrLName
             // 
             this.textBoxDrLName.Location = new System.Drawing.Point(612, 51);
@@ -298,30 +301,31 @@
             this.textBoxDrLName.Size = new System.Drawing.Size(251, 43);
             this.textBoxDrLName.TabIndex = 12;
             // 
-            // labelDrState
+            // labelDrCity
             // 
-            this.labelDrState.AutoSize = true;
-            this.labelDrState.Location = new System.Drawing.Point(544, 198);
-            this.labelDrState.Name = "labelDrState";
-            this.labelDrState.Size = new System.Drawing.Size(62, 28);
-            this.labelDrState.TabIndex = 9;
-            this.labelDrState.Text = "State";
+            this.labelDrCity.AutoSize = true;
+            this.labelDrCity.Location = new System.Drawing.Point(553, 152);
+            this.labelDrCity.Name = "labelDrCity";
+            this.labelDrCity.Size = new System.Drawing.Size(53, 28);
+            this.labelDrCity.TabIndex = 8;
+            this.labelDrCity.Text = "City";
             // 
-            // textBoxDrFName
+            // textBoxDrState
             // 
-            this.textBoxDrFName.Location = new System.Drawing.Point(165, 48);
-            this.textBoxDrFName.Name = "textBoxDrFName";
-            this.textBoxDrFName.Size = new System.Drawing.Size(251, 43);
-            this.textBoxDrFName.TabIndex = 11;
+            this.textBoxDrState.Location = new System.Drawing.Point(612, 198);
+            this.textBoxDrState.Name = "textBoxDrState";
+            this.textBoxDrState.Size = new System.Drawing.Size(251, 43);
+            this.textBoxDrState.TabIndex = 18;
             // 
-            // labelDrZip
+            // tabPageViewDonors
             // 
-            this.labelDrZip.AutoSize = true;
-            this.labelDrZip.Location = new System.Drawing.Point(53, 247);
-            this.labelDrZip.Name = "labelDrZip";
-            this.labelDrZip.Size = new System.Drawing.Size(106, 28);
-            this.labelDrZip.TabIndex = 10;
-            this.labelDrZip.Text = "ZIP Code";
+            this.tabPageViewDonors.Controls.Add(this.dataGridDonor);
+            this.tabPageViewDonors.Location = new System.Drawing.Point(4, 37);
+            this.tabPageViewDonors.Name = "tabPageViewDonors";
+            this.tabPageViewDonors.Size = new System.Drawing.Size(866, 370);
+            this.tabPageViewDonors.TabIndex = 2;
+            this.tabPageViewDonors.Text = "Donor List";
+            this.tabPageViewDonors.UseVisualStyleBackColor = true;
             // 
             // dataGridDonor
             // 
@@ -347,7 +351,7 @@
             this.dataGridDonor.Name = "dataGridDonor";
             this.dataGridDonor.RowHeadersWidth = 62;
             this.dataGridDonor.RowTemplate.Height = 28;
-            this.dataGridDonor.Size = new System.Drawing.Size(866, 378);
+            this.dataGridDonor.Size = new System.Drawing.Size(866, 370);
             this.dataGridDonor.TabIndex = 0;
             // 
             // DonorID
@@ -361,30 +365,20 @@
             // 
             // tabPageAddDonations
             // 
-            this.tabPageAddDonations.Location = new System.Drawing.Point(4, 29);
+            this.tabPageAddDonations.Location = new System.Drawing.Point(4, 37);
             this.tabPageAddDonations.Name = "tabPageAddDonations";
-            this.tabPageAddDonations.Size = new System.Drawing.Size(866, 378);
+            this.tabPageAddDonations.Size = new System.Drawing.Size(866, 370);
             this.tabPageAddDonations.TabIndex = 1;
             this.tabPageAddDonations.Text = "Donations";
             this.tabPageAddDonations.UseVisualStyleBackColor = true;
             // 
-            // tabPageViewDonors
-            // 
-            this.tabPageViewDonors.Controls.Add(this.dataGridDonor);
-            this.tabPageViewDonors.Location = new System.Drawing.Point(4, 29);
-            this.tabPageViewDonors.Name = "tabPageViewDonors";
-            this.tabPageViewDonors.Size = new System.Drawing.Size(866, 378);
-            this.tabPageViewDonors.TabIndex = 2;
-            this.tabPageViewDonors.Text = "Donors";
-            this.tabPageViewDonors.UseVisualStyleBackColor = true;
-            // 
             // tabPageViewDonations
             // 
-            this.tabPageViewDonations.Location = new System.Drawing.Point(4, 29);
+            this.tabPageViewDonations.Location = new System.Drawing.Point(4, 37);
             this.tabPageViewDonations.Name = "tabPageViewDonations";
-            this.tabPageViewDonations.Size = new System.Drawing.Size(866, 378);
+            this.tabPageViewDonations.Size = new System.Drawing.Size(866, 370);
             this.tabPageViewDonations.TabIndex = 3;
-            this.tabPageViewDonations.Text = "Donations";
+            this.tabPageViewDonations.Text = "Donation List";
             this.tabPageViewDonations.UseVisualStyleBackColor = true;
             // 
             // anonymousDataGridViewCheckBoxColumn
@@ -479,6 +473,28 @@
             // 
             this.donorsBindingSource2.DataSource = typeof(Grizzlies_Helping_Grizzlies.Donors);
             // 
+            // textBoxDrZip
+            // 
+            this.textBoxDrZip.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.textBoxDrZip.Location = new System.Drawing.Point(164, 195);
+            this.textBoxDrZip.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.textBoxDrZip.Name = "textBoxDrZip";
+            this.textBoxDrZip.Size = new System.Drawing.Size(251, 43);
+            this.textBoxDrZip.TabIndex = 23;
+            this.textBoxDrZip.Value = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            // 
             // GHGForm
             // 
             this.ClientSize = new System.Drawing.Size(874, 411);
@@ -489,9 +505,10 @@
             this.tabControl.ResumeLayout(false);
             this.tabPageAddDonors.ResumeLayout(false);
             this.tabPageAddDonors.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDonor)).EndInit();
             this.tabPageViewDonors.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDonor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxDrZip)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -505,7 +522,6 @@
         private System.Windows.Forms.Label labelDrFName;
         private System.Windows.Forms.Label labelDrLName;
         private System.Windows.Forms.Label labelDrCompany;
-        private System.Windows.Forms.TextBox textBoxDrZip;
         private System.Windows.Forms.TextBox textBoxDrState;
         private System.Windows.Forms.TextBox textBoxDrAddress;
         private System.Windows.Forms.TextBox textBoxDrCity;
@@ -540,6 +556,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn donorZipDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage tabPageViewDonors;
         private System.Windows.Forms.TabPage tabPageViewDonations;
+        private System.Windows.Forms.NumericUpDown textBoxDrZip;
     }
 }
 
