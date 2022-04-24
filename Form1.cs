@@ -34,6 +34,7 @@ namespace Grizzlies_Helping_Grizzlies
         private Label labelStAddress;
         private Label labelPNumber;
         private Label labelEmail;
+        private CheckBox checkBoxAnon;
         private TabPage tabPage1;
 
         public GHGForm()
@@ -66,6 +67,7 @@ namespace Grizzlies_Helping_Grizzlies
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.checkBoxAnon = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.Donors.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +85,7 @@ namespace Grizzlies_Helping_Grizzlies
             // 
             // Donors
             // 
+            this.Donors.Controls.Add(this.checkBoxAnon);
             this.Donors.Controls.Add(this.textBox4);
             this.Donors.Controls.Add(this.textBox3);
             this.Donors.Controls.Add(this.textBox2);
@@ -135,7 +138,7 @@ namespace Grizzlies_Helping_Grizzlies
             // labelDType
             // 
             this.labelDType.AutoSize = true;
-            this.labelDType.Location = new System.Drawing.Point(13, 59);
+            this.labelDType.Location = new System.Drawing.Point(83, 56);
             this.labelDType.Name = "labelDType";
             this.labelDType.Size = new System.Drawing.Size(180, 39);
             this.labelDType.TabIndex = 1;
@@ -145,7 +148,7 @@ namespace Grizzlies_Helping_Grizzlies
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 174);
+            this.label2.Location = new System.Drawing.Point(32, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(231, 39);
             this.label2.TabIndex = 2;
@@ -154,7 +157,7 @@ namespace Grizzlies_Helping_Grizzlies
             // labelLName
             // 
             this.labelLName.AutoSize = true;
-            this.labelLName.Location = new System.Drawing.Point(539, 117);
+            this.labelLName.Location = new System.Drawing.Point(629, 120);
             this.labelLName.Name = "labelLName";
             this.labelLName.Size = new System.Drawing.Size(159, 39);
             this.labelLName.TabIndex = 3;
@@ -163,7 +166,7 @@ namespace Grizzlies_Helping_Grizzlies
             // labelFName
             // 
             this.labelFName.AutoSize = true;
-            this.labelFName.Location = new System.Drawing.Point(13, 114);
+            this.labelFName.Location = new System.Drawing.Point(98, 120);
             this.labelFName.Name = "labelFName";
             this.labelFName.Size = new System.Drawing.Size(165, 39);
             this.labelFName.TabIndex = 4;
@@ -173,7 +176,7 @@ namespace Grizzlies_Helping_Grizzlies
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(538, 177);
+            this.labelEmail.Location = new System.Drawing.Point(695, 180);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(93, 39);
             this.labelEmail.TabIndex = 5;
@@ -182,7 +185,7 @@ namespace Grizzlies_Helping_Grizzlies
             // labelPNumber
             // 
             this.labelPNumber.AutoSize = true;
-            this.labelPNumber.Location = new System.Drawing.Point(538, 57);
+            this.labelPNumber.Location = new System.Drawing.Point(567, 60);
             this.labelPNumber.Name = "labelPNumber";
             this.labelPNumber.Size = new System.Drawing.Size(221, 39);
             this.labelPNumber.TabIndex = 6;
@@ -191,7 +194,7 @@ namespace Grizzlies_Helping_Grizzlies
             // labelStAddress
             // 
             this.labelStAddress.AutoSize = true;
-            this.labelStAddress.Location = new System.Drawing.Point(16, 234);
+            this.labelStAddress.Location = new System.Drawing.Point(53, 237);
             this.labelStAddress.Name = "labelStAddress";
             this.labelStAddress.Size = new System.Drawing.Size(210, 39);
             this.labelStAddress.TabIndex = 7;
@@ -200,7 +203,7 @@ namespace Grizzlies_Helping_Grizzlies
             // labelCity
             // 
             this.labelCity.AutoSize = true;
-            this.labelCity.Location = new System.Drawing.Point(16, 294);
+            this.labelCity.Location = new System.Drawing.Point(190, 297);
             this.labelCity.Name = "labelCity";
             this.labelCity.Size = new System.Drawing.Size(73, 39);
             this.labelCity.TabIndex = 8;
@@ -209,7 +212,7 @@ namespace Grizzlies_Helping_Grizzlies
             // labelState
             // 
             this.labelState.AutoSize = true;
-            this.labelState.Location = new System.Drawing.Point(548, 294);
+            this.labelState.Location = new System.Drawing.Point(705, 297);
             this.labelState.Name = "labelState";
             this.labelState.Size = new System.Drawing.Size(83, 39);
             this.labelState.TabIndex = 9;
@@ -218,7 +221,7 @@ namespace Grizzlies_Helping_Grizzlies
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 354);
+            this.label6.Location = new System.Drawing.Point(117, 352);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(146, 39);
             this.label6.TabIndex = 10;
@@ -286,6 +289,16 @@ namespace Grizzlies_Helping_Grizzlies
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(251, 54);
             this.textBox4.TabIndex = 19;
+            // 
+            // checkBoxAnon
+            // 
+            this.checkBoxAnon.AutoSize = true;
+            this.checkBoxAnon.Location = new System.Drawing.Point(698, 355);
+            this.checkBoxAnon.Name = "checkBoxAnon";
+            this.checkBoxAnon.Size = new System.Drawing.Size(347, 43);
+            this.checkBoxAnon.TabIndex = 20;
+            this.checkBoxAnon.Text = "Register Anonymously";
+            this.checkBoxAnon.UseVisualStyleBackColor = true;
             // 
             // GHGForm
             // 
