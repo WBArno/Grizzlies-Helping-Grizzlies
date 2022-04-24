@@ -10,7 +10,7 @@ namespace Grizzlies_Helping_Grizzlies
     {
         /// <summary>
         /// The main entry point for the application.
-        /// Testing Jira Integration
+        /// Testing Jira
         /// </summary>
         [STAThread]
         static void Main()
