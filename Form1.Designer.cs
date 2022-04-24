@@ -490,7 +490,7 @@
             this.textBoxDrZip.Size = new System.Drawing.Size(251, 43);
             this.textBoxDrZip.TabIndex = 23;
             this.textBoxDrZip.Value = new decimal(new int[] {
-            10000,
+            11111,
             0,
             0,
             0});
