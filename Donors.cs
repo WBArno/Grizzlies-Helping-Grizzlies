@@ -70,7 +70,7 @@ namespace Grizzlies_Helping_Grizzlies
                 MessageBox.Show("Please fill out all required boxes.", "Invalid Entry");
                 return false;
             }
-            else if (!Int32.TryParse(donorPhoneNumber, out _) || donorPhoneNumber.Length != 10)
+            else if (!Int64.TryParse(donorPhoneNumber, out _) || donorPhoneNumber.Length != 10)
             {
                 MessageBox.Show("Please enter a valid phone number (no spaces or punctuation.)", "Invalid Entry");
                 return false;

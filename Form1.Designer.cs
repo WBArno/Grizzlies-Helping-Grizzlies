@@ -30,8 +30,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GHGForm));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageAddDonors = new System.Windows.Forms.TabPage();
+            this.textBoxDrZip = new System.Windows.Forms.NumericUpDown();
             this.buttonDrClear = new System.Windows.Forms.Button();
             this.comboBoxDrType = new System.Windows.Forms.ComboBox();
             this.buttonDrSubmit = new System.Windows.Forms.Button();
@@ -71,13 +73,12 @@
             this.donorStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorZipDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxDrZip = new System.Windows.Forms.NumericUpDown();
             this.tabControl.SuspendLayout();
             this.tabPageAddDonors.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxDrZip)).BeginInit();
             this.tabPageViewDonors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDonor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxDrZip)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -126,6 +127,28 @@
             this.tabPageAddDonors.Text = "Donors";
             this.tabPageAddDonors.UseVisualStyleBackColor = true;
             // 
+            // textBoxDrZip
+            // 
+            this.textBoxDrZip.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.textBoxDrZip.Location = new System.Drawing.Point(164, 195);
+            this.textBoxDrZip.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.textBoxDrZip.Name = "textBoxDrZip";
+            this.textBoxDrZip.Size = new System.Drawing.Size(251, 43);
+            this.textBoxDrZip.TabIndex = 23;
+            this.textBoxDrZip.Value = new decimal(new int[] {
+            11111,
+            0,
+            0,
+            0});
+            // 
             // buttonDrClear
             // 
             this.buttonDrClear.Location = new System.Drawing.Point(549, 295);
@@ -147,7 +170,6 @@
             this.comboBoxDrType.Name = "comboBoxDrType";
             this.comboBoxDrType.Size = new System.Drawing.Size(250, 36);
             this.comboBoxDrType.TabIndex = 0;
-            this.comboBoxDrType.SelectedIndexChanged += new System.EventHandler(this.comboBoxDrType_SelectedIndexChanged);
             // 
             // buttonDrSubmit
             // 
@@ -320,9 +342,9 @@
             // tabPageViewDonors
             // 
             this.tabPageViewDonors.Controls.Add(this.dataGridDonor);
-            this.tabPageViewDonors.Location = new System.Drawing.Point(4, 37);
+            this.tabPageViewDonors.Location = new System.Drawing.Point(4, 29);
             this.tabPageViewDonors.Name = "tabPageViewDonors";
-            this.tabPageViewDonors.Size = new System.Drawing.Size(866, 370);
+            this.tabPageViewDonors.Size = new System.Drawing.Size(866, 378);
             this.tabPageViewDonors.TabIndex = 2;
             this.tabPageViewDonors.Text = "Donor List";
             this.tabPageViewDonors.UseVisualStyleBackColor = true;
@@ -351,7 +373,7 @@
             this.dataGridDonor.Name = "dataGridDonor";
             this.dataGridDonor.RowHeadersWidth = 62;
             this.dataGridDonor.RowTemplate.Height = 28;
-            this.dataGridDonor.Size = new System.Drawing.Size(866, 370);
+            this.dataGridDonor.Size = new System.Drawing.Size(866, 378);
             this.dataGridDonor.TabIndex = 0;
             // 
             // DonorID
@@ -365,18 +387,18 @@
             // 
             // tabPageAddDonations
             // 
-            this.tabPageAddDonations.Location = new System.Drawing.Point(4, 37);
+            this.tabPageAddDonations.Location = new System.Drawing.Point(4, 29);
             this.tabPageAddDonations.Name = "tabPageAddDonations";
-            this.tabPageAddDonations.Size = new System.Drawing.Size(866, 370);
+            this.tabPageAddDonations.Size = new System.Drawing.Size(866, 378);
             this.tabPageAddDonations.TabIndex = 1;
             this.tabPageAddDonations.Text = "Donations";
             this.tabPageAddDonations.UseVisualStyleBackColor = true;
             // 
             // tabPageViewDonations
             // 
-            this.tabPageViewDonations.Location = new System.Drawing.Point(4, 37);
+            this.tabPageViewDonations.Location = new System.Drawing.Point(4, 29);
             this.tabPageViewDonations.Name = "tabPageViewDonations";
-            this.tabPageViewDonations.Size = new System.Drawing.Size(866, 370);
+            this.tabPageViewDonations.Size = new System.Drawing.Size(866, 378);
             this.tabPageViewDonations.TabIndex = 3;
             this.tabPageViewDonations.Text = "Donation List";
             this.tabPageViewDonations.UseVisualStyleBackColor = true;
@@ -473,42 +495,21 @@
             // 
             this.donorsBindingSource2.DataSource = typeof(Grizzlies_Helping_Grizzlies.Donors);
             // 
-            // textBoxDrZip
-            // 
-            this.textBoxDrZip.Increment = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.textBoxDrZip.Location = new System.Drawing.Point(164, 195);
-            this.textBoxDrZip.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.textBoxDrZip.Name = "textBoxDrZip";
-            this.textBoxDrZip.Size = new System.Drawing.Size(251, 43);
-            this.textBoxDrZip.TabIndex = 23;
-            this.textBoxDrZip.Value = new decimal(new int[] {
-            11111,
-            0,
-            0,
-            0});
-            // 
             // GHGForm
             // 
             this.ClientSize = new System.Drawing.Size(874, 411);
             this.Controls.Add(this.tabControl);
             this.Font = new System.Drawing.Font("Yu Mincho", 11F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GHGForm";
             this.Text = "Grizzlies Helping Grizzlies";
             this.tabControl.ResumeLayout(false);
             this.tabPageAddDonors.ResumeLayout(false);
             this.tabPageAddDonors.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxDrZip)).EndInit();
             this.tabPageViewDonors.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDonor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxDrZip)).EndInit();
             this.ResumeLayout(false);
 
         }
