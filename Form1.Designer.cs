@@ -147,7 +147,6 @@
             this.comboBoxDrType.Name = "comboBoxDrType";
             this.comboBoxDrType.Size = new System.Drawing.Size(250, 36);
             this.comboBoxDrType.TabIndex = 0;
-            this.comboBoxDrType.SelectedIndexChanged += new System.EventHandler(this.comboBoxDrType_SelectedIndexChanged);
             // 
             // buttonDrSubmit
             // 

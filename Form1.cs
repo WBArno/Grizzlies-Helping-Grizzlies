@@ -36,13 +36,13 @@ namespace Grizzlies_Helping_Grizzlies
         {
             if (dr.SanityCheck(comboBoxDrType.Text, textBoxDrFName.Text, textBoxDrLName.Text, textBoxDrCompany.Text,
                     textBoxDrEmail.Text, textBoxDrPNumber.Text, textBoxDrAddress.Text, textBoxDrCity.Text, textBoxDrState.Text,
-                    textBoxDrZip2.Text, checkBoxAnon.Checked)) 
+                    textBoxDrZip.Text, checkBoxAnon.Checked)) 
             {
                 donorNumber += 1;
 
                 Donors DrObj = new Donors(comboBoxDrType.Text, textBoxDrFName.Text, textBoxDrLName.Text, textBoxDrCompany.Text,
                     textBoxDrEmail.Text, textBoxDrPNumber.Text, textBoxDrAddress.Text, textBoxDrCity.Text, textBoxDrState.Text,
-                    textBoxDrZip2.Text, checkBoxAnon.Checked, donorNumber);
+                    textBoxDrZip.Text, checkBoxAnon.Checked, donorNumber);
                 donorsBindingSource2.Add(DrObj);
                   clearDonorFields();
             }
@@ -60,23 +60,7 @@ namespace Grizzlies_Helping_Grizzlies
             textBoxDrAddress.Clear();
             textBoxDrCity.Clear();
             textBoxDrState.Clear();
-            textBoxDrZip2.Clear();
-            labelDrCompany.Hide();
-            textBoxDrCompany.Hide();
-        }
-
-        private void comboBoxDrType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxDrType.Text == "Company")
-            {
-                labelDrCompany.Show();
-                textBoxDrCompany.Show();
-            } else
-            {
-                labelDrCompany.Hide();
-                textBoxDrCompany.Hide();
-                textBoxDrCompany.Clear();
-            }
+            textBoxDrZip.Value = 0;
         }
     }
 }
