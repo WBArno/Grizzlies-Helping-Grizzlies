@@ -53,7 +53,7 @@ namespace Grizzlies_Helping_Grizzlies
             DonorAddress = donorAddress;
             DonorCity = donorCity;
             DonorState = donorState;
-            DonorZip = Convert.ToInt16(donorZip);
+            DonorZip = Convert.ToInt32(donorZip);
         }
 
 
