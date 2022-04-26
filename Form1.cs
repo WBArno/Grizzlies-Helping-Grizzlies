@@ -21,6 +21,7 @@ namespace Grizzlies_Helping_Grizzlies
         Donors dr = new Donors(); // Blank Donors init for Method access. Should probably keep methods in another file.
         Donations dn = new Donations(); // Blank Donors init for Method access.
         int donorNumber = 0;
+        int donationNumber = 0;
 
         // Form Actions
         private void buttonDrClear_Click(object sender, EventArgs e) {clearDonationFields();} // buttonDoClear
@@ -35,6 +36,7 @@ namespace Grizzlies_Helping_Grizzlies
                 textBoxDrZip.Text, checkBoxAnon.Checked))
             {
                 donorNumber += 1;
+                labelDrNum.Text = Convert.ToString(donorNumber + 1);
 
                 Donors DrObj = new Donors(comboBoxDrType.Text, textBoxDrFName.Text, textBoxDrLName.Text, textBoxDrCompany.Text,
                     textBoxDrEmail.Text, textBoxDrPNumber.Text, textBoxDrAddress.Text, textBoxDrCity.Text, textBoxDrState.Text,
@@ -48,9 +50,12 @@ namespace Grizzlies_Helping_Grizzlies
 
         private void buttonDrSubmit_Click(object sender, EventArgs e) // buttonDoSubmit
         {
-            if (dn.InsanityCheck(numBoxDonID.Value, numBoxDrID.Value, textBoxDoDate.Text, numBoxValue.Value, comboBoxDoType.Text))
+            if (dn.InsanityCheck(numBoxDrID.Value, numBoxValue.Value, comboBoxDoType.Text))
             {
-                Donations DoObj = new Donations(numBoxDonID.Value, numBoxDrID.Value, textBoxDoDate.Text, numBoxValue.Value, comboBoxDoType.Text, textBoxDoDesc.Text);
+                donationNumber += 1;
+                labelDoNum.Text = Convert.ToString(donationNumber + 1);
+
+                Donations DoObj = new Donations(donationNumber, numBoxDrID.Value, Convert.ToString(dateTimePickerDo.Value).Substring(0, Convert.ToString(dateTimePickerDo.Value).IndexOf(" ")), numBoxValue.Value, comboBoxDoType.Text, textBoxDoDesc.Text);
                 donationsBindingSource.Add(DoObj);
                 clearDonationFields();
             }
@@ -61,11 +66,20 @@ namespace Grizzlies_Helping_Grizzlies
         {
             if (comboBoxDrType.Text == "Company")
             {
+                textBoxDrFName.Enabled = false;
+                textBoxDrLName.Enabled = false;
+                textBoxDrFName.Clear();
+                textBoxDrLName.Clear();
+
                 labelDrCompany.Visible = true;
                 textBoxDrCompany.Visible = true;
+                textBoxDrFName.Enabled = false;
+                textBoxDrLName.Enabled = false;
             }
             else
             {
+                textBoxDrFName.Enabled = true;
+                textBoxDrLName.Enabled = true;
                 labelDrCompany.Visible = false;
                 textBoxDrCompany.Visible = false;
                 textBoxDrCompany.Clear();
@@ -90,12 +104,14 @@ namespace Grizzlies_Helping_Grizzlies
 
         private void clearDonationFields()
         {
-            numBoxDonID.Value = 0;
             numBoxDrID.Value = 0;
-            textBoxDoDate.Clear();
+            dateTimePickerDo.Value = DateTime.Today;
             numBoxValue.Value = 0;
             comboBoxDoType.SelectedIndex = 0;
             textBoxDoDesc.Text = "(Optional)";
         }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e) {}
+        private void toolTip2_Popup(object sender, PopupEventArgs e) {}
     }
 }
