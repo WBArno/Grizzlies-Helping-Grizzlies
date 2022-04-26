@@ -34,7 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>resources\kurokuma.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -90,6 +91,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="kurokuma.ico" />
+    <None Include="resources\volunteer.jpg" />
+    <None Include="resources\savings_jar.jpg" />
+    <None Include="resources\money_jar.jpg" />
+    <None Include="resources\hands_background.png" />
+    <None Include="resources\mascot.jpg" />
+    <None Include="resources\R.png" />
+    <None Include="resources\images %281%291.jfif" />
+    <None Include="resources\istockphoto-1136860624-612x612.jpg" />
+    <None Include="resources\images.jfif" />
+    <None Include="resources\images %281%29.jfif" />
+    <None Include="resources\OIP %281%29.jfif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

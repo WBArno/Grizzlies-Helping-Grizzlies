@@ -64,7 +64,7 @@ namespace Grizzlies_Helping_Grizzlies
             string donorState, string donorZip, bool anonymous)
         {
             // Checks for any blank text boxes
-            if (donorFirstName == "" || donorLastName == "" || donorEmail == "" || donorAddress == "" ||
+            if ((donorType != "Company" && (donorFirstName == "" || donorLastName == "")) || donorEmail == "" || donorAddress == "" ||
                 donorCity == "" || donorState == "" || donorZip == "")
             {
                 MessageBox.Show("Please fill out all required boxes.", "Invalid Entry");
