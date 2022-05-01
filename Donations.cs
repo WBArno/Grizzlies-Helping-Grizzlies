@@ -38,29 +38,5 @@ namespace Grizzlies_Helping_Grizzlies
             DonationType = donationType;
             if (donationDescription != "(Optional)") { DonationDescription = donationDescription; }
         }
-
-
-
-        // Checks for invalid entries.
-        public bool InsanityCheck(decimal donorID, decimal donationValue, string donationType)
-        {
-            // Checks for any blank text boxes
-            if (donationType == "")
-            {
-                MessageBox.Show("Please fill out all required boxes.", "Invalid Entry");
-                return false;
-            }
-            else if (donationValue <= 0)
-            {
-                MessageBox.Show("Please enter a valid donation value.", "Invalid Entry");
-                return false;
-            }
-            else if (donorID <= 0)
-            {
-                MessageBox.Show("Please enter a valid Donor ID.", "Invalid Entry");
-                return false;
-            }
-            else return true;
-        }
     }
 }

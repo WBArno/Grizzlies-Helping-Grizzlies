@@ -69,33 +69,6 @@ namespace Grizzlies_Helping_Grizzlies
 
 
         // Checks for invalid entries.
-        public bool SanityCheck(string donorType, string donorFirstName, string donorLastName, string donorCompanyName,
-            string donorEmail, string donorPhoneNumber, string donorAddress, string donorCity,
-            string donorState, string donorZip, bool anonymous)
-        {
-            // Checks for any blank text boxes
-            if ((donorType != "Company" && (donorFirstName == "" || donorLastName == "")) || donorEmail == "" || donorAddress == "" ||
-                donorCity == "" || donorState == "" || donorZip == "")
-            {
-                MessageBox.Show("Please fill out all required boxes.", "Invalid Entry");
-                return false;
-            }
-            else if (!Int64.TryParse(donorPhoneNumber, out _) || donorPhoneNumber.Length != 10)
-            {
-                MessageBox.Show("Please enter a valid phone number (no spaces or punctuation.)", "Invalid Entry");
-                return false;
-            }
-            else if (!Int32.TryParse(donorZip, out _) || donorZip.Length != 5)
-            {
-                MessageBox.Show("Please enter a valid, five-digit ZIP code.", "Invalid Entry");
-                return false;
-            }
-            else if (donorType == "Company" && donorCompanyName == "")
-            {
-                MessageBox.Show("Please enter a valid company name.", "Invalid Entry");
-                return false;
-            }
-            else return true;
-        }
+
     }
 }
