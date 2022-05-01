@@ -73,7 +73,7 @@ namespace Grizzlies_Helping_Grizzlies
                         switch (count) // There has to be a better way of doing this...
                         {
                             case 0:
-                                anon = Boolean.TryParse(dVal, out anon);
+                                anon = Convert.ToBoolean(dVal);
                                 break;
                             case 1:
                                 donorType = dVal;
