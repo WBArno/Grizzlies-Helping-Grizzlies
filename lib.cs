@@ -137,7 +137,7 @@ namespace Grizzlies_Helping_Grizzlies
                                 donationDescription = dVal;
                                 break;
                             default:
-                                MessageBox.Show("This message shouldn't appear.\nDonations Switch Statement.\n" + dVal);
+                                MessageBox.Show("This message shouldn't appear.\nDonations Switch Statement.");
                                 break;
                         }
                     }
@@ -229,6 +229,24 @@ namespace Grizzlies_Helping_Grizzlies
                 return false;
             }
             else return true;
+        }
+        
+        
+        /* ConfirmationBox
+         * Simple Method that asks whether the person would like to submit and returns their answer
+         * - Returns: bool of the user's choice of whether to continue
+         */
+        public bool ConfirmationBox()
+        {
+            if (MessageBox.Show("Are you sure that you would like to submit this form?", "Confirmation",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

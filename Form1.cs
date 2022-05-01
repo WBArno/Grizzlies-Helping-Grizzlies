@@ -47,11 +47,11 @@ namespace Grizzlies_Helping_Grizzlies
         {
             if (lib.SanityCheck(comboBoxDrType.Text, textBoxDrFName.Text, textBoxDrLName.Text, textBoxDrCompany.Text,
                 textBoxDrEmail.Text, textBoxDrPNumber.Text, textBoxDrAddress.Text, textBoxDrCity.Text, textBoxDrState.Text,
-                textBoxDrZip.Text, checkBoxAnon.Checked)) // TODO: Change to method?
+                textBoxDrZip.Text, checkBoxAnon.Checked) && lib.ConfirmationBox()) // TODO: Change to method?
             {
                 lib.donorNumber ++;
                 labelDrNum.Text = Convert.ToString(lib.donorNumber + 1);
-
+                
                 Donors DrObj = new Donors(comboBoxDrType.Text, textBoxDrFName.Text, textBoxDrLName.Text, textBoxDrCompany.Text,
                     textBoxDrEmail.Text, Convert.ToInt64(textBoxDrPNumber.Text), textBoxDrAddress.Text, textBoxDrCity.Text, textBoxDrState.Text,
                     Convert.ToInt32(textBoxDrZip.Text), checkBoxAnon.Checked, lib.donorNumber);
@@ -62,12 +62,14 @@ namespace Grizzlies_Helping_Grizzlies
 
         private void buttonDrSubmit_Click(object sender, EventArgs e) // buttonDoSubmit
         {
-            if (lib.InsanityCheck(numBoxDrID.Value, numBoxValue.Value, comboBoxDoType.Text)) // TODO: Change to method?
+            if (lib.InsanityCheck(numBoxDrID.Value, numBoxValue.Value, comboBoxDoType.Text) && lib.ConfirmationBox()) // TODO: Change to method?
             {
                 lib.donationNumber ++;
                 labelDoNum.Text = Convert.ToString(lib.donationNumber + 1);
 
-                Donations DoObj = new Donations(lib.donationNumber, numBoxDrID.Value, Convert.ToString(dateTimePickerDo.Value).Substring(0, Convert.ToString(dateTimePickerDo.Value).IndexOf(" ")), numBoxValue.Value, comboBoxDoType.Text, textBoxDoDesc.Text);
+                Donations DoObj = new Donations(lib.donationNumber, numBoxDrID.Value, 
+                    Convert.ToString(dateTimePickerDo.Value).Substring(0, Convert.ToString(dateTimePickerDo.Value).IndexOf(" ")), 
+                    numBoxValue.Value, comboBoxDoType.Text, textBoxDoDesc.Text);
                 donationsBindingSource.Add(DoObj);
                 clearFields(false);
             }
@@ -102,8 +104,7 @@ namespace Grizzlies_Helping_Grizzlies
 
 
 
-        /*
-         * clearFields
+        /* clearFields
          * Clears text fields of either donor or donation page dependent upon argument
          * - Args: fieldType: bool which determines whether donors or donations are being handled.
          */
@@ -132,6 +133,6 @@ namespace Grizzlies_Helping_Grizzlies
                 textBoxDoDesc.Text = "(Optional)";
             }    
         }
-
+        
     }
 }

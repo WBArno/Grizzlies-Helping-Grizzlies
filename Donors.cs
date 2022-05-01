@@ -64,11 +64,5 @@ namespace Grizzlies_Helping_Grizzlies
             DonorState = donorState;
             DonorZip = Convert.ToInt32(donorZip);
         }
-
-
-
-
-        // Checks for invalid entries.
-
     }
 }
