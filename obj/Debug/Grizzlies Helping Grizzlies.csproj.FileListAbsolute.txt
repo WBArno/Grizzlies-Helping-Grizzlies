@@ -1,0 +1,11 @@
+C:\Users\willi\OneDrive\Spring 2022\Organizations and Technology\Grizzlies Helping Grizzlies\obj\Debug\Grizzlies Helping Grizzlies.csproj.AssemblyReference.cache
+C:\Users\willi\OneDrive\Spring 2022\Organizations and Technology\Grizzlies Helping Grizzlies\obj\Debug\Grizzlies Helping Grizzlies.csproj.SuggestedBindingRedirects.cache
+C:\Users\willi\OneDrive\Spring 2022\Organizations and Technology\Grizzlies Helping Grizzlies\obj\Debug\Grizzlies_Helping_Grizzlies.Properties.Resources.resources
+C:\Users\willi\OneDrive\Spring 2022\Organizations and Technology\Grizzlies Helping Grizzlies\obj\Debug\Grizzlies Helping Grizzlies.csproj.GenerateResource.cache
+C:\Users\willi\OneDrive\Spring 2022\Organizations and Technology\Grizzlies Helping Grizzlies\obj\Debug\Grizzlies Helping Grizzlies.csproj.CoreCompileInputs.cache
+C:\Users\willi\OneDrive\Spring 2022\Organizations and Technology\Grizzlies Helping Grizzlies\bin\Debug\Grizzlies Helping Grizzlies.exe.config
+C:\Users\willi\OneDrive\Spring 2022\Organizations and Technology\Grizzlies Helping Grizzlies\bin\Debug\Grizzlies Helping Grizzlies.exe
+C:\Users\willi\OneDrive\Spring 2022\Organizations and Technology\Grizzlies Helping Grizzlies\bin\Debug\Grizzlies Helping Grizzlies.pdb
+C:\Users\willi\OneDrive\Spring 2022\Organizations and Technology\Grizzlies Helping Grizzlies\obj\Debug\Grizzlies Helping Grizzlies.exe
+C:\Users\willi\OneDrive\Spring 2022\Organizations and Technology\Grizzlies Helping Grizzlies\obj\Debug\Grizzlies Helping Grizzlies.pdb
+C:\Users\willi\OneDrive\Spring 2022\Organizations and Technology\Grizzlies Helping Grizzlies\obj\Debug\Grizzlies_Helping_Grizzlies.GHGForm.resources

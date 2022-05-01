@@ -3,15 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.SqlServer.Server;
-using Microsoft.VisualBasic.FileIO;
-
-
-
-
 
 namespace Grizzlies_Helping_Grizzlies
 {
@@ -44,12 +37,11 @@ namespace Grizzlies_Helping_Grizzlies
             DonorState = "";
             DonorZip = 0;
             Anonymous = false;
-            DonorNumber = 0;
         }
 
         public Donors(string donorType, string donorFirstName, string donorLastName, string donorCompanyName,
-            string donorEmail, long donorPhoneNumber, string donorAddress, string donorCity,
-            string donorState, int donorZip, bool anonymous, int donorNumber)
+            string donorEmail, string donorPhoneNumber, string donorAddress, string donorCity,
+            string donorState, string donorZip, bool anonymous, int donorNumber)
         {
             DonorType = donorType;
             DonorPhoneNumber = Convert.ToInt64(donorPhoneNumber);
@@ -64,8 +56,77 @@ namespace Grizzlies_Helping_Grizzlies
             DonorState = donorState;
             DonorZip = Convert.ToInt32(donorZip);
         }
+        public void readCSV(String fileLoc)
+        {
+            FileStream newFileStream = new FileStream(fileLoc, FileMode.Open);
+            StreamReader rd = new StreamReader(newFileStream);
+            int count = 0;
 
 
+            string[] csvOut = new string[10];
+            string csvLine;
+
+            while ((csvLine = rd.ReadLine()) != null)
+            {
+                csvOut.Append(csvLine);
+                csvLine = rd.ReadLine();
+            }
+
+            
+
+            foreach (string drVal in csvOut)
+            {
+                string[] drArr = drVal.Split(',');
+                foreach (string dVal in drArr)
+                {
+                    switch (count) // There has to be a better way of doing this...
+                    {
+                        case 0:
+                            if (dVal == "true") { this.Anonymous = true; } else { this.Anonymous = false; }
+                            break;
+                        case 1:
+                            this.DonorType = dVal;
+                            break;
+                        case 2:
+                            this.DonorCompanyName = dVal;
+                            break;
+                        case 3:
+                            this.DonorLastName = dVal;
+                            break;
+                        case 4:
+                            this.DonorFirstName = dVal;
+                            break;
+                        case 5:
+                            this.DonorEmail = dVal;
+                            break;
+                        case 6:
+                            this.DonorPhoneNumber = Convert.ToInt64(dVal);
+                            break;
+                        case 7:
+                            this.DonorAddress = dVal;
+                            break;
+                        case 8:
+                            this.DonorCity = dVal;
+                            break;
+                        case 9:
+                            this.DonorState = dVal;
+                            break;
+                        case 10:
+                            this.DonorZip = Convert.ToInt32(dVal);
+                            break;
+                    }
+                    count += 1;
+                }
+
+                Donors tempDonor = new Donors();
+                donorsBindingSource.Add(tempDonor);
+            }
+        }
+
+        public void arrayToDataFrame(string[] arrayIn)
+        {
+            
+        }
 
 
         // Checks for invalid entries.

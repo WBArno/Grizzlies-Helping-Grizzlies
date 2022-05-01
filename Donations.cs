@@ -15,7 +15,7 @@ namespace Grizzlies_Helping_Grizzlies
         public decimal DonationValue { get; set; }
         public string DonationType { get; set; }
         public string DonationDescription { get; set; }
-        
+
 
 
         // Blank Constructor
@@ -28,12 +28,12 @@ namespace Grizzlies_Helping_Grizzlies
             DonationDescription = "";
         }
 
-        public Donations(int donationID, decimal donorID, string donationDate, decimal donationValue, string donationType, 
+        public Donations(int donationID, decimal donorID, string donationDate, decimal donationValue, string donationType,
             string donationDescription)
         {
             DonationID = donationID;
             DonorID = donorID;
-            DonationDate= donationDate;
+            DonationDate = donationDate;
             DonationValue = donationValue;
             DonationType = donationType;
             if (donationDescription != "(Optional)") { DonationDescription = donationDescription; }

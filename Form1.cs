@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,56 +13,56 @@ namespace Grizzlies_Helping_Grizzlies
 {
     public partial class GHGForm : Form
     {
-
+        public static int donorNumber, donationNumber;
         public GHGForm()
         {
+            Donors dr = new Donors();
             InitializeComponent();
+            Object[] what = lib.readCSV("../../resources/donorList.csv", true); // Only works when running from IDE; will not work from root
+            foreach (Object why in what)
+            {
+                donorsBindingSource.Add(why);
+            }
         }
 
+        Lib lib = new Lib();
         Donors dr = new Donors(); // Blank Donors init for Method access. Should probably keep methods in another file.
         Donations dn = new Donations(); // Blank Donors init for Method access.
-        int donorNumber = 0;
-        int donationNumber = 0;
+
 
         // Form Actions
         private void buttonDrClear_Click(object sender, EventArgs e) {clearDonationFields();} // buttonDoClear
-        private void buttonDoClear_Click(object sender, EventArgs e) { } // To-Do: Clean up broken button links
         private void buttonDrClear_Click_1(object sender, EventArgs e) { clearDonorFields(); } // buttonDrClear
-
-
         private void buttonDrSubmit_Click_1(object sender, EventArgs e) // buttonDrSubmit
         {
             if (dr.SanityCheck(comboBoxDrType.Text, textBoxDrFName.Text, textBoxDrLName.Text, textBoxDrCompany.Text,
                 textBoxDrEmail.Text, textBoxDrPNumber.Text, textBoxDrAddress.Text, textBoxDrCity.Text, textBoxDrState.Text,
                 textBoxDrZip.Text, checkBoxAnon.Checked))
             {
-                donorNumber += 1;
+                lib.donorNumber ++;
                 labelDrNum.Text = Convert.ToString(donorNumber + 1);
 
                 Donors DrObj = new Donors(comboBoxDrType.Text, textBoxDrFName.Text, textBoxDrLName.Text, textBoxDrCompany.Text,
-                    textBoxDrEmail.Text, textBoxDrPNumber.Text, textBoxDrAddress.Text, textBoxDrCity.Text, textBoxDrState.Text,
-                    textBoxDrZip.Text, checkBoxAnon.Checked, donorNumber);
-                donorsBindingSource2.Add(DrObj);
+                    textBoxDrEmail.Text, Convert.ToInt64(textBoxDrPNumber.Text), textBoxDrAddress.Text, textBoxDrCity.Text, textBoxDrState.Text,
+                    Convert.ToInt32(textBoxDrZip.Text), checkBoxAnon.Checked, lib.donorNumber);
+                donorsBindingSource.Add(DrObj);
                 clearDonorFields();
             }
         }
-
-        private void buttonDoSubmit_Click(object sender, EventArgs e) { } // To-Do: Clean up broken button links
 
         private void buttonDrSubmit_Click(object sender, EventArgs e) // buttonDoSubmit
         {
             if (dn.InsanityCheck(numBoxDrID.Value, numBoxValue.Value, comboBoxDoType.Text))
             {
-                donationNumber += 1;
+                lib.donationNumber ++;
                 labelDoNum.Text = Convert.ToString(donationNumber + 1);
 
-                Donations DoObj = new Donations(donationNumber, numBoxDrID.Value, Convert.ToString(dateTimePickerDo.Value).Substring(0, Convert.ToString(dateTimePickerDo.Value).IndexOf(" ")), numBoxValue.Value, comboBoxDoType.Text, textBoxDoDesc.Text);
+                Donations DoObj = new Donations(lib.donationNumber, numBoxDrID.Value, Convert.ToString(dateTimePickerDo.Value).Substring(0, Convert.ToString(dateTimePickerDo.Value).IndexOf(" ")), numBoxValue.Value, comboBoxDoType.Text, textBoxDoDesc.Text);
                 donationsBindingSource.Add(DoObj);
                 clearDonationFields();
             }
         }
 
-        private void comboBoxDrType_SelectedIndexChanged(object sender, EventArgs e) { } // To-Do: Clean up broken button links
         private void comboBoxDrType_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (comboBoxDrType.Text == "Company")
@@ -113,5 +114,7 @@ namespace Grizzlies_Helping_Grizzlies
 
         private void toolTip1_Popup(object sender, PopupEventArgs e) {}
         private void toolTip2_Popup(object sender, PopupEventArgs e) {}
+
+
     }
 }

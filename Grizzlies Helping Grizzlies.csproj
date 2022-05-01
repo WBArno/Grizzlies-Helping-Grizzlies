@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{43444147-94BA-4E13-875E-172FB0EA0B4A}</ProjectGuid>
+    <ProjectGuid>{4D1F61CE-F4ED-4C57-8900-40F440C587F4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Grizzlies_Helping_Grizzlies</RootNamespace>
     <AssemblyName>Grizzlies Helping Grizzlies</AssemblyName>
@@ -34,10 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>resources\kurokuma.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,6 +59,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="lib.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -85,23 +86,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="resources\donorList.csv" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="kurokuma.ico" />
-    <None Include="resources\volunteer.jpg" />
-    <None Include="resources\savings_jar.jpg" />
-    <None Include="resources\money_jar.jpg" />
-    <None Include="resources\hands_background.png" />
-    <None Include="resources\mascot.jpg" />
-    <None Include="resources\R.png" />
-    <None Include="resources\images %281%291.jfif" />
-    <None Include="resources\istockphoto-1136860624-612x612.jpg" />
-    <None Include="resources\images.jfif" />
-    <None Include="resources\images %281%29.jfif" />
-    <None Include="resources\OIP %281%29.jfif" />
+    <Content Include="resources\hands_background.png" />
+    <Content Include="resources\kurokuma.ico" />
+    <Content Include="resources\mascot.jpg" />
+    <Content Include="resources\money_jar.jpg" />
+    <Content Include="resources\savings_jar.jpg" />
+    <Content Include="resources\volunteer.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
