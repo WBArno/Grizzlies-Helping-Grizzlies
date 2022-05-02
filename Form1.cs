@@ -150,6 +150,10 @@ namespace Grizzlies_Helping_Grizzlies
 
         private void logInPage(bool userLoggedIn) // And Out
         {
+            clearFields(true);
+            clearFields(false);
+            textBoxML.Clear();
+
             if (!userLoggedIn)
             {
                 tabControl.TabPages.Add(tabPageAddDonors);
@@ -227,5 +231,6 @@ namespace Grizzlies_Helping_Grizzlies
         {
             logInPage(true);
         }
+
     }
 }

@@ -33,6 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GHGForm));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageLogin = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBoxPwd = new System.Windows.Forms.TextBox();
             this.textBoxUsr = new System.Windows.Forms.TextBox();
             this.labelPwd = new System.Windows.Forms.Label();
@@ -132,6 +133,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.splitContainerDL = new System.Windows.Forms.SplitContainer();
             this.tabControl.SuspendLayout();
             this.tabPageLogin.SuspendLayout();
             this.tabPageAddDonors.SuspendLayout();
@@ -152,6 +154,9 @@
             this.splitContainerMail.Panel2.SuspendLayout();
             this.splitContainerMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mailingListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerDL)).BeginInit();
+            this.splitContainerDL.Panel2.SuspendLayout();
+            this.splitContainerDL.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -172,6 +177,8 @@
             // 
             // tabPageLogin
             // 
+            this.tabPageLogin.BackColor = System.Drawing.Color.SeaGreen;
+            this.tabPageLogin.Controls.Add(this.label1);
             this.tabPageLogin.Controls.Add(this.textBoxPwd);
             this.tabPageLogin.Controls.Add(this.textBoxUsr);
             this.tabPageLogin.Controls.Add(this.labelPwd);
@@ -182,18 +189,31 @@
             this.tabPageLogin.Size = new System.Drawing.Size(1053, 410);
             this.tabPageLogin.TabIndex = 7;
             this.tabPageLogin.Text = "Login";
-            this.tabPageLogin.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DarkCyan;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.Font = new System.Drawing.Font("Yu Mincho Demibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(453, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 27);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Please Sign In";
             // 
             // textBoxPwd
             // 
-            this.textBoxPwd.Location = new System.Drawing.Point(497, 154);
+            this.textBoxPwd.Location = new System.Drawing.Point(503, 218);
             this.textBoxPwd.Name = "textBoxPwd";
             this.textBoxPwd.Size = new System.Drawing.Size(100, 31);
             this.textBoxPwd.TabIndex = 4;
             // 
             // textBoxUsr
             // 
-            this.textBoxUsr.Location = new System.Drawing.Point(496, 83);
+            this.textBoxUsr.Location = new System.Drawing.Point(502, 147);
             this.textBoxUsr.Name = "textBoxUsr";
             this.textBoxUsr.Size = new System.Drawing.Size(100, 31);
             this.textBoxUsr.TabIndex = 3;
@@ -201,29 +221,36 @@
             // labelPwd
             // 
             this.labelPwd.AutoSize = true;
-            this.labelPwd.Location = new System.Drawing.Point(420, 157);
+            this.labelPwd.Font = new System.Drawing.Font("Yu Mincho Demibold", 11F);
+            this.labelPwd.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelPwd.Location = new System.Drawing.Point(426, 221);
             this.labelPwd.Name = "labelPwd";
-            this.labelPwd.Size = new System.Drawing.Size(71, 19);
+            this.labelPwd.Size = new System.Drawing.Size(71, 20);
             this.labelPwd.TabIndex = 2;
             this.labelPwd.Text = "Password";
             // 
             // labelUsr
             // 
             this.labelUsr.AutoSize = true;
-            this.labelUsr.Location = new System.Drawing.Point(415, 86);
+            this.labelUsr.Font = new System.Drawing.Font("Yu Mincho Demibold", 11F);
+            this.labelUsr.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelUsr.Location = new System.Drawing.Point(421, 150);
             this.labelUsr.Name = "labelUsr";
-            this.labelUsr.Size = new System.Drawing.Size(76, 19);
+            this.labelUsr.Size = new System.Drawing.Size(77, 20);
             this.labelUsr.TabIndex = 1;
             this.labelUsr.Text = "Username";
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(444, 223);
+            this.buttonLogin.BackColor = System.Drawing.Color.SeaGreen;
+            this.buttonLogin.Font = new System.Drawing.Font("Yu Mincho Demibold", 11F);
+            this.buttonLogin.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonLogin.Location = new System.Drawing.Point(463, 300);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(99, 48);
             this.buttonLogin.TabIndex = 0;
             this.buttonLogin.Text = "Login";
-            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // tabPageAddDonors
@@ -260,10 +287,10 @@
             this.tabPageAddDonors.Controls.Add(this.labelDrCity);
             this.tabPageAddDonors.Controls.Add(this.textBoxDrState);
             this.tabPageAddDonors.Font = new System.Drawing.Font("Yu Mincho Demibold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.tabPageAddDonors.Location = new System.Drawing.Point(4, 29);
+            this.tabPageAddDonors.Location = new System.Drawing.Point(4, 28);
             this.tabPageAddDonors.Name = "tabPageAddDonors";
             this.tabPageAddDonors.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAddDonors.Size = new System.Drawing.Size(1053, 409);
+            this.tabPageAddDonors.Size = new System.Drawing.Size(1053, 410);
             this.tabPageAddDonors.TabIndex = 4;
             this.tabPageAddDonors.Text = "Donors";
             // 
@@ -1004,11 +1031,11 @@
             // 
             // tabPageViewDonations
             // 
+            this.tabPageViewDonations.Controls.Add(this.splitContainerDL);
             this.tabPageViewDonations.Controls.Add(this.buttonLODoList);
-            this.tabPageViewDonations.Controls.Add(this.dataGridDonations);
-            this.tabPageViewDonations.Location = new System.Drawing.Point(4, 29);
+            this.tabPageViewDonations.Location = new System.Drawing.Point(4, 28);
             this.tabPageViewDonations.Name = "tabPageViewDonations";
-            this.tabPageViewDonations.Size = new System.Drawing.Size(1053, 409);
+            this.tabPageViewDonations.Size = new System.Drawing.Size(1053, 410);
             this.tabPageViewDonations.TabIndex = 5;
             this.tabPageViewDonations.Text = "Donation List";
             this.tabPageViewDonations.UseVisualStyleBackColor = true;
@@ -1047,7 +1074,7 @@
             this.dataGridDonations.Name = "dataGridDonations";
             this.dataGridDonations.RowHeadersWidth = 62;
             this.dataGridDonations.RowTemplate.Height = 28;
-            this.dataGridDonations.Size = new System.Drawing.Size(1053, 409);
+            this.dataGridDonations.Size = new System.Drawing.Size(698, 410);
             this.dataGridDonations.TabIndex = 0;
             this.toolTip1.SetToolTip(this.dataGridDonations, "List of all donations made.");
             // 
@@ -1106,9 +1133,9 @@
             // tabPageMailingList
             // 
             this.tabPageMailingList.Controls.Add(this.splitContainerMail);
-            this.tabPageMailingList.Location = new System.Drawing.Point(4, 28);
+            this.tabPageMailingList.Location = new System.Drawing.Point(4, 29);
             this.tabPageMailingList.Name = "tabPageMailingList";
-            this.tabPageMailingList.Size = new System.Drawing.Size(1053, 410);
+            this.tabPageMailingList.Size = new System.Drawing.Size(1053, 409);
             this.tabPageMailingList.TabIndex = 6;
             this.tabPageMailingList.Text = "Mailing List";
             this.tabPageMailingList.UseVisualStyleBackColor = true;
@@ -1131,7 +1158,7 @@
             // splitContainerMail.Panel2
             // 
             this.splitContainerMail.Panel2.Controls.Add(this.listBoxMail);
-            this.splitContainerMail.Size = new System.Drawing.Size(1053, 410);
+            this.splitContainerMail.Size = new System.Drawing.Size(1053, 409);
             this.splitContainerMail.SplitterDistance = 188;
             this.splitContainerMail.TabIndex = 0;
             // 
@@ -1207,7 +1234,7 @@
             this.listBoxMail.ItemHeight = 19;
             this.listBoxMail.Location = new System.Drawing.Point(0, 0);
             this.listBoxMail.Name = "listBoxMail";
-            this.listBoxMail.Size = new System.Drawing.Size(861, 410);
+            this.listBoxMail.Size = new System.Drawing.Size(861, 409);
             this.listBoxMail.TabIndex = 0;
             this.listBoxMail.ValueMember = "EmailAddress";
             // 
@@ -1317,6 +1344,21 @@
             // 
             this.toolTip2.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip2_Popup);
             // 
+            // splitContainerDL
+            // 
+            this.splitContainerDL.BackColor = System.Drawing.Color.SeaGreen;
+            this.splitContainerDL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerDL.ForeColor = System.Drawing.SystemColors.Control;
+            this.splitContainerDL.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerDL.Name = "splitContainerDL";
+            // 
+            // splitContainerDL.Panel2
+            // 
+            this.splitContainerDL.Panel2.Controls.Add(this.dataGridDonations);
+            this.splitContainerDL.Size = new System.Drawing.Size(1053, 410);
+            this.splitContainerDL.SplitterDistance = 351;
+            this.splitContainerDL.TabIndex = 40;
+            // 
             // GHGForm
             // 
             this.ClientSize = new System.Drawing.Size(1061, 442);
@@ -1348,6 +1390,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMail)).EndInit();
             this.splitContainerMail.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mailingListBindingSource)).EndInit();
+            this.splitContainerDL.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerDL)).EndInit();
+            this.splitContainerDL.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1473,6 +1518,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label labelML;
         private System.Windows.Forms.CheckBox checkBoxML;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.SplitContainer splitContainerDL;
     }
 }
 
