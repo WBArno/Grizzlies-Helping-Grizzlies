@@ -33,6 +33,12 @@ namespace Grizzlies_Helping_Grizzlies
             }
             labelDoNum.Text = Convert.ToString(lib.donationNumber + 1);
 
+            // Donors
+            labelTlDr.Text = Convert.ToString(lib.donorNumber);
+            labelIndCt.Text = Convert.ToString(lib.individualCount);
+            labelCmpCt.Text = Convert.ToString(lib.companyCount);
+
+            // Donations
             labelClothingCount.Text = Convert.ToString(lib.donationTypes[0]);
             labelFoodCount.Text = Convert.ToString(lib.donationTypes[1]);
             labelMoneyCount.Text = Convert.ToString(lib.donationTypes[2]);
@@ -67,7 +73,20 @@ namespace Grizzlies_Helping_Grizzlies
 
                 lib.donorNumber ++;
                 labelDrNum.Text = Convert.ToString(lib.donorNumber + 1);
+
+                labelTlDr.Text = Convert.ToString(lib.donorNumber);
+                if (comboBoxDrType.Text == "Individual")
+                {
+                    lib.individualCount++;
+                    labelIndCt.Text = Convert.ToString(lib.individualCount);
+                }
+                else
+                {
+                    lib.companyCount++;
+                    labelCmpCt.Text = Convert.ToString(lib.companyCount);
+                }
                 
+
 
                 Donors DrObj = new Donors(comboBoxDrType.Text, textBoxDrFName.Text, textBoxDrLName.Text, textBoxDrCompany.Text,
                     textBoxDrEmail.Text, Convert.ToInt64(textBoxDrPNumber.Text), textBoxDrAddress.Text, textBoxDrCity.Text, textBoxDrState.Text,

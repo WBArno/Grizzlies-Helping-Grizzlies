@@ -31,6 +31,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GHGForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageLogin = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -145,6 +146,13 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.splitContainerDr = new System.Windows.Forms.SplitContainer();
+            this.labelDrTotal = new System.Windows.Forms.Label();
+            this.labelDrInd = new System.Windows.Forms.Label();
+            this.labelDrCmp = new System.Windows.Forms.Label();
+            this.labelTlDr = new System.Windows.Forms.Label();
+            this.labelIndCt = new System.Windows.Forms.Label();
+            this.labelCmpCt = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageLogin.SuspendLayout();
             this.tabPageAddDonors.SuspendLayout();
@@ -169,6 +177,10 @@
             this.splitContainerMail.Panel2.SuspendLayout();
             this.splitContainerMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mailingListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerDr)).BeginInit();
+            this.splitContainerDr.Panel1.SuspendLayout();
+            this.splitContainerDr.Panel2.SuspendLayout();
+            this.splitContainerDr.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -665,11 +677,10 @@
             // 
             // tabPageViewDonors
             // 
-            this.tabPageViewDonors.Controls.Add(this.buttonLODrList);
-            this.tabPageViewDonors.Controls.Add(this.dataGridDonor);
-            this.tabPageViewDonors.Location = new System.Drawing.Point(4, 29);
+            this.tabPageViewDonors.Controls.Add(this.splitContainerDr);
+            this.tabPageViewDonors.Location = new System.Drawing.Point(4, 28);
             this.tabPageViewDonors.Name = "tabPageViewDonors";
-            this.tabPageViewDonors.Size = new System.Drawing.Size(1053, 409);
+            this.tabPageViewDonors.Size = new System.Drawing.Size(1053, 410);
             this.tabPageViewDonors.TabIndex = 2;
             this.tabPageViewDonors.Text = "Donor List";
             this.tabPageViewDonors.UseVisualStyleBackColor = true;
@@ -679,7 +690,7 @@
             this.buttonLODrList.BackColor = System.Drawing.Color.SeaGreen;
             this.buttonLODrList.Font = new System.Drawing.Font("Yu Mincho", 11F);
             this.buttonLODrList.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonLODrList.Location = new System.Drawing.Point(3, 364);
+            this.buttonLODrList.Location = new System.Drawing.Point(3, 14);
             this.buttonLODrList.Name = "buttonLODrList";
             this.buttonLODrList.Size = new System.Drawing.Size(75, 26);
             this.buttonLODrList.TabIndex = 36;
@@ -713,7 +724,7 @@
             this.dataGridDonor.Name = "dataGridDonor";
             this.dataGridDonor.RowHeadersWidth = 62;
             this.dataGridDonor.RowTemplate.Height = 28;
-            this.dataGridDonor.Size = new System.Drawing.Size(1053, 409);
+            this.dataGridDonor.Size = new System.Drawing.Size(1053, 363);
             this.dataGridDonor.TabIndex = 0;
             // 
             // donorTypeDataGridViewTextBoxColumn2
@@ -1265,6 +1276,14 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.dataGridDonations.DataSource = this.donationsBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Yu Mincho", 11F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridDonations.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridDonations.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridDonations.GridColor = System.Drawing.SystemColors.ControlText;
             this.dataGridDonations.Location = new System.Drawing.Point(0, 0);
@@ -1541,6 +1560,118 @@
             // 
             this.toolTip2.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip2_Popup);
             // 
+            // splitContainerDr
+            // 
+            this.splitContainerDr.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerDr.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerDr.Name = "splitContainerDr";
+            this.splitContainerDr.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainerDr.Panel1
+            // 
+            this.splitContainerDr.Panel1.Controls.Add(this.dataGridDonor);
+            // 
+            // splitContainerDr.Panel2
+            // 
+            this.splitContainerDr.Panel2.BackColor = System.Drawing.Color.SeaGreen;
+            this.splitContainerDr.Panel2.Controls.Add(this.labelCmpCt);
+            this.splitContainerDr.Panel2.Controls.Add(this.labelIndCt);
+            this.splitContainerDr.Panel2.Controls.Add(this.labelTlDr);
+            this.splitContainerDr.Panel2.Controls.Add(this.labelDrCmp);
+            this.splitContainerDr.Panel2.Controls.Add(this.labelDrInd);
+            this.splitContainerDr.Panel2.Controls.Add(this.labelDrTotal);
+            this.splitContainerDr.Panel2.Controls.Add(this.buttonLODrList);
+            this.splitContainerDr.Size = new System.Drawing.Size(1053, 410);
+            this.splitContainerDr.SplitterDistance = 363;
+            this.splitContainerDr.TabIndex = 37;
+            // 
+            // labelDrTotal
+            // 
+            this.labelDrTotal.AutoSize = true;
+            this.labelDrTotal.BackColor = System.Drawing.Color.Teal;
+            this.labelDrTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelDrTotal.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelDrTotal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelDrTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelDrTotal.Location = new System.Drawing.Point(127, 10);
+            this.labelDrTotal.Name = "labelDrTotal";
+            this.labelDrTotal.Size = new System.Drawing.Size(183, 22);
+            this.labelDrTotal.TabIndex = 47;
+            this.labelDrTotal.Text = "Total Number of Donors:";
+            this.labelDrTotal.UseMnemonic = false;
+            // 
+            // labelDrInd
+            // 
+            this.labelDrInd.AutoSize = true;
+            this.labelDrInd.BackColor = System.Drawing.Color.Teal;
+            this.labelDrInd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelDrInd.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelDrInd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelDrInd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelDrInd.Location = new System.Drawing.Point(470, 10);
+            this.labelDrInd.Name = "labelDrInd";
+            this.labelDrInd.Size = new System.Drawing.Size(135, 22);
+            this.labelDrInd.TabIndex = 48;
+            this.labelDrInd.Text = "Individual Donors:";
+            this.labelDrInd.UseMnemonic = false;
+            // 
+            // labelDrCmp
+            // 
+            this.labelDrCmp.AutoSize = true;
+            this.labelDrCmp.BackColor = System.Drawing.Color.Teal;
+            this.labelDrCmp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelDrCmp.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelDrCmp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelDrCmp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelDrCmp.Location = new System.Drawing.Point(760, 10);
+            this.labelDrCmp.Name = "labelDrCmp";
+            this.labelDrCmp.Size = new System.Drawing.Size(137, 22);
+            this.labelDrCmp.TabIndex = 49;
+            this.labelDrCmp.Text = "Corporate Donors:";
+            this.labelDrCmp.UseMnemonic = false;
+            // 
+            // labelTlDr
+            // 
+            this.labelTlDr.AutoSize = true;
+            this.labelTlDr.BackColor = System.Drawing.Color.Teal;
+            this.labelTlDr.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelTlDr.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelTlDr.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelTlDr.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelTlDr.Location = new System.Drawing.Point(316, 10);
+            this.labelTlDr.Name = "labelTlDr";
+            this.labelTlDr.Size = new System.Drawing.Size(19, 22);
+            this.labelTlDr.TabIndex = 50;
+            this.labelTlDr.Text = "1";
+            // 
+            // labelIndCt
+            // 
+            this.labelIndCt.AutoSize = true;
+            this.labelIndCt.BackColor = System.Drawing.Color.Teal;
+            this.labelIndCt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelIndCt.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelIndCt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelIndCt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelIndCt.Location = new System.Drawing.Point(611, 10);
+            this.labelIndCt.Name = "labelIndCt";
+            this.labelIndCt.Size = new System.Drawing.Size(19, 22);
+            this.labelIndCt.TabIndex = 51;
+            this.labelIndCt.Text = "1";
+            // 
+            // labelCmpCt
+            // 
+            this.labelCmpCt.AutoSize = true;
+            this.labelCmpCt.BackColor = System.Drawing.Color.Teal;
+            this.labelCmpCt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelCmpCt.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelCmpCt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelCmpCt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelCmpCt.Location = new System.Drawing.Point(903, 10);
+            this.labelCmpCt.Name = "labelCmpCt";
+            this.labelCmpCt.Size = new System.Drawing.Size(19, 22);
+            this.labelCmpCt.TabIndex = 52;
+            this.labelCmpCt.Text = "1";
+            // 
             // GHGForm
             // 
             this.ClientSize = new System.Drawing.Size(1061, 442);
@@ -1577,6 +1708,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMail)).EndInit();
             this.splitContainerMail.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mailingListBindingSource)).EndInit();
+            this.splitContainerDr.Panel1.ResumeLayout(false);
+            this.splitContainerDr.Panel2.ResumeLayout(false);
+            this.splitContainerDr.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerDr)).EndInit();
+            this.splitContainerDr.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1715,6 +1851,13 @@
         private System.Windows.Forms.Label labelDoCtClothing;
         private System.Windows.Forms.Label labelToyCt;
         private System.Windows.Forms.Label labelDoCtToy;
+        private System.Windows.Forms.SplitContainer splitContainerDr;
+        private System.Windows.Forms.Label labelCmpCt;
+        private System.Windows.Forms.Label labelIndCt;
+        private System.Windows.Forms.Label labelTlDr;
+        private System.Windows.Forms.Label labelDrCmp;
+        private System.Windows.Forms.Label labelDrInd;
+        private System.Windows.Forms.Label labelDrTotal;
     }
 }
 
