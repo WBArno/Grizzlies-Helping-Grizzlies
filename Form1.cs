@@ -33,8 +33,7 @@ namespace Grizzlies_Helping_Grizzlies
             }
             labelDoNum.Text = Convert.ToString(lib.donationNumber + 1);
 
-            // Hides initial tabs for login form
-            logIn(true);
+            logInPage(true);  // Hides initial tabs for login form
         }
         
         Lib lib = new Lib();
@@ -52,6 +51,12 @@ namespace Grizzlies_Helping_Grizzlies
                 textBoxDrEmail.Text, textBoxDrPNumber.Text, textBoxDrAddress.Text, textBoxDrCity.Text, textBoxDrState.Text,
                 textBoxDrZip.Text, checkBoxAnon.Checked) && lib.ConfirmationBox()) // TODO: Change to method?
             {
+                if (checkBoxML.Checked)
+                { 
+                    MailingList mlObj = new MailingList(textBoxDrEmail.Text);
+                    mailingListBindingSource.Add(mlObj);
+                }
+
                 lib.donorNumber ++;
                 labelDrNum.Text = Convert.ToString(lib.donorNumber + 1);
                 
@@ -80,10 +85,7 @@ namespace Grizzlies_Helping_Grizzlies
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if (textBoxUsr.Text.ToLower() == "admin" && textBoxPwd.Text != "")
-            {
-                logIn(false);
-            }
+            logIn(textBoxUsr.Text, textBoxPwd.Text);
         }
 
         private void comboBoxDrType_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -113,7 +115,7 @@ namespace Grizzlies_Helping_Grizzlies
         private void toolTip1_Popup(object sender, PopupEventArgs e) {}
         private void toolTip2_Popup(object sender, PopupEventArgs e) {} // Why are there two toolTips?
 
-
+        
 
         /* clearFields
          * Clears text fields of either donor or donation page dependent upon argument
@@ -125,6 +127,7 @@ namespace Grizzlies_Helping_Grizzlies
             {
                 comboBoxDrType.Text = "Individual";
                 checkBoxAnon.Checked = false;
+                checkBoxML.Checked = false;
                 textBoxDrFName.Clear();
                 textBoxDrLName.Clear();
                 textBoxDrCompany.Clear();
@@ -145,7 +148,7 @@ namespace Grizzlies_Helping_Grizzlies
             }    
         }
 
-        private void logIn(bool userLoggedIn) // And Out
+        private void logInPage(bool userLoggedIn) // And Out
         {
             if (!userLoggedIn)
             {
@@ -169,6 +172,60 @@ namespace Grizzlies_Helping_Grizzlies
                 }
             }
 
+        }
+
+        private void logIn(string username, string password)
+        {
+            if (password != "Admin" || username == "")
+            {
+                logInPage(false);
+                tabControl.TabPages.Remove(tabPageViewDonors);
+                tabControl.TabPages.Remove(tabPageViewDonations);
+                tabControl.TabPages.Remove(tabPageMailingList);
+
+            }
+            else
+            {
+                logInPage(false);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (lib.isValidAddress(textBoxML.Text) && lib.ConfirmationBox())
+            {
+                MailingList mailObj = new MailingList(textBoxML.Text);
+                mailingListBindingSource.Add(mailObj);
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid email.", "Invalid Entry");
+            }
+        }
+
+        private void buttonLODrAdd_Click(object sender, EventArgs e)
+        {
+            logInPage(true);
+        }
+
+        private void buttonLODrList_Click(object sender, EventArgs e)
+        {
+            logInPage(true);
+        }
+
+        private void buttonLODoAdd_Click(object sender, EventArgs e)
+        {
+            logInPage(true);
+        }
+
+        private void buttonLODoList_Click(object sender, EventArgs e)
+        {
+            logInPage(true);
+        }
+
+        private void buttonLOML_Click(object sender, EventArgs e)
+        {
+            logInPage(true);
         }
     }
 }

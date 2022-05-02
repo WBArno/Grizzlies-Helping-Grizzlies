@@ -33,8 +33,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GHGForm));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageLogin = new System.Windows.Forms.TabPage();
+            this.textBoxPwd = new System.Windows.Forms.TextBox();
+            this.textBoxUsr = new System.Windows.Forms.TextBox();
+            this.labelPwd = new System.Windows.Forms.Label();
+            this.labelUsr = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.tabPageAddDonors = new System.Windows.Forms.TabPage();
+            this.checkBoxML = new System.Windows.Forms.CheckBox();
+            this.buttonLODrAdd = new System.Windows.Forms.Button();
             this.labelDrNum = new System.Windows.Forms.Label();
             this.labelDrID = new System.Windows.Forms.Label();
             this.pictureBoxMascot = new System.Windows.Forms.PictureBox();
@@ -62,21 +68,23 @@
             this.labelDrCity = new System.Windows.Forms.Label();
             this.textBoxDrState = new System.Windows.Forms.TextBox();
             this.tabPageViewDonors = new System.Windows.Forms.TabPage();
+            this.buttonLODrList = new System.Windows.Forms.Button();
             this.dataGridDonor = new System.Windows.Forms.DataGridView();
-            this.donorNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anonymousDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.donorTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorCompanyNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorLastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorFirstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorPhoneNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorEmailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorAddressDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorCityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorStateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorZipDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorTypeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorFirstNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorLastNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorCompanyNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorEmailDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorPhoneNumberDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorAddressDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorCityDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorStateDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorZipDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anonymousDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageAddDonations = new System.Windows.Forms.TabPage();
+            this.buttonLODoAdd = new System.Windows.Forms.Button();
             this.dateTimePickerDo = new System.Windows.Forms.DateTimePicker();
             this.labelDoNum = new System.Windows.Forms.Label();
             this.labelDoDesc = new System.Windows.Forms.Label();
@@ -92,6 +100,7 @@
             this.labelDoDonorID = new System.Windows.Forms.Label();
             this.labelDoDate = new System.Windows.Forms.Label();
             this.tabPageViewDonations = new System.Windows.Forms.TabPage();
+            this.buttonLODoList = new System.Windows.Forms.Button();
             this.dataGridDonations = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,6 +110,14 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageMailingList = new System.Windows.Forms.TabPage();
+            this.splitContainerMail = new System.Windows.Forms.SplitContainer();
+            this.labelML = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBoxML = new System.Windows.Forms.TextBox();
+            this.labelMLEnter = new System.Windows.Forms.Label();
+            this.buttonLOML = new System.Windows.Forms.Button();
+            this.listBoxMail = new System.Windows.Forms.ListBox();
+            this.mailingListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anonymousDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.donorTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorCompanyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,10 +132,6 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.labelUsr = new System.Windows.Forms.Label();
-            this.labelPwd = new System.Windows.Forms.Label();
-            this.textBoxUsr = new System.Windows.Forms.TextBox();
-            this.textBoxPwd = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tabPageLogin.SuspendLayout();
             this.tabPageAddDonors.SuspendLayout();
@@ -133,6 +146,12 @@
             this.tabPageViewDonations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDonations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donationsBindingSource)).BeginInit();
+            this.tabPageMailingList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMail)).BeginInit();
+            this.splitContainerMail.Panel1.SuspendLayout();
+            this.splitContainerMail.Panel2.SuspendLayout();
+            this.splitContainerMail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mailingListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -165,9 +184,41 @@
             this.tabPageLogin.Text = "Login";
             this.tabPageLogin.UseVisualStyleBackColor = true;
             // 
+            // textBoxPwd
+            // 
+            this.textBoxPwd.Location = new System.Drawing.Point(497, 154);
+            this.textBoxPwd.Name = "textBoxPwd";
+            this.textBoxPwd.Size = new System.Drawing.Size(100, 31);
+            this.textBoxPwd.TabIndex = 4;
+            // 
+            // textBoxUsr
+            // 
+            this.textBoxUsr.Location = new System.Drawing.Point(496, 83);
+            this.textBoxUsr.Name = "textBoxUsr";
+            this.textBoxUsr.Size = new System.Drawing.Size(100, 31);
+            this.textBoxUsr.TabIndex = 3;
+            // 
+            // labelPwd
+            // 
+            this.labelPwd.AutoSize = true;
+            this.labelPwd.Location = new System.Drawing.Point(420, 157);
+            this.labelPwd.Name = "labelPwd";
+            this.labelPwd.Size = new System.Drawing.Size(71, 19);
+            this.labelPwd.TabIndex = 2;
+            this.labelPwd.Text = "Password";
+            // 
+            // labelUsr
+            // 
+            this.labelUsr.AutoSize = true;
+            this.labelUsr.Location = new System.Drawing.Point(415, 86);
+            this.labelUsr.Name = "labelUsr";
+            this.labelUsr.Size = new System.Drawing.Size(76, 19);
+            this.labelUsr.TabIndex = 1;
+            this.labelUsr.Text = "Username";
+            // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(453, 223);
+            this.buttonLogin.Location = new System.Drawing.Point(444, 223);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(99, 48);
             this.buttonLogin.TabIndex = 0;
@@ -180,6 +231,8 @@
             this.tabPageAddDonors.BackColor = System.Drawing.Color.SeaGreen;
             this.tabPageAddDonors.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPageAddDonors.BackgroundImage")));
             this.tabPageAddDonors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tabPageAddDonors.Controls.Add(this.checkBoxML);
+            this.tabPageAddDonors.Controls.Add(this.buttonLODrAdd);
             this.tabPageAddDonors.Controls.Add(this.labelDrNum);
             this.tabPageAddDonors.Controls.Add(this.labelDrID);
             this.tabPageAddDonors.Controls.Add(this.pictureBoxMascot);
@@ -207,12 +260,39 @@
             this.tabPageAddDonors.Controls.Add(this.labelDrCity);
             this.tabPageAddDonors.Controls.Add(this.textBoxDrState);
             this.tabPageAddDonors.Font = new System.Drawing.Font("Yu Mincho Demibold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.tabPageAddDonors.Location = new System.Drawing.Point(4, 28);
+            this.tabPageAddDonors.Location = new System.Drawing.Point(4, 29);
             this.tabPageAddDonors.Name = "tabPageAddDonors";
             this.tabPageAddDonors.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAddDonors.Size = new System.Drawing.Size(1053, 410);
+            this.tabPageAddDonors.Size = new System.Drawing.Size(1053, 409);
             this.tabPageAddDonors.TabIndex = 4;
             this.tabPageAddDonors.Text = "Donors";
+            // 
+            // checkBoxML
+            // 
+            this.checkBoxML.AutoSize = true;
+            this.checkBoxML.BackColor = System.Drawing.Color.Teal;
+            this.checkBoxML.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.checkBoxML.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkBoxML.Location = new System.Drawing.Point(431, 341);
+            this.checkBoxML.Name = "checkBoxML";
+            this.checkBoxML.Size = new System.Drawing.Size(167, 24);
+            this.checkBoxML.TabIndex = 38;
+            this.checkBoxML.Text = "Join the Mailing List";
+            this.toolTip1.SetToolTip(this.checkBoxML, "Check this if the donor wants to be added to the mailing list.");
+            this.checkBoxML.UseVisualStyleBackColor = false;
+            // 
+            // buttonLODrAdd
+            // 
+            this.buttonLODrAdd.BackColor = System.Drawing.Color.SeaGreen;
+            this.buttonLODrAdd.Font = new System.Drawing.Font("Yu Mincho", 11F);
+            this.buttonLODrAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonLODrAdd.Location = new System.Drawing.Point(3, 381);
+            this.buttonLODrAdd.Name = "buttonLODrAdd";
+            this.buttonLODrAdd.Size = new System.Drawing.Size(75, 26);
+            this.buttonLODrAdd.TabIndex = 37;
+            this.buttonLODrAdd.Text = "Log Out";
+            this.buttonLODrAdd.UseVisualStyleBackColor = false;
+            this.buttonLODrAdd.Click += new System.EventHandler(this.buttonLODrAdd_Click);
             // 
             // labelDrNum
             // 
@@ -373,7 +453,7 @@
             this.checkBoxAnon.BackColor = System.Drawing.Color.Teal;
             this.checkBoxAnon.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.checkBoxAnon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBoxAnon.Location = new System.Drawing.Point(431, 360);
+            this.checkBoxAnon.Location = new System.Drawing.Point(431, 371);
             this.checkBoxAnon.Name = "checkBoxAnon";
             this.checkBoxAnon.Size = new System.Drawing.Size(177, 24);
             this.checkBoxAnon.TabIndex = 20;
@@ -546,13 +626,27 @@
             // 
             // tabPageViewDonors
             // 
+            this.tabPageViewDonors.Controls.Add(this.buttonLODrList);
             this.tabPageViewDonors.Controls.Add(this.dataGridDonor);
-            this.tabPageViewDonors.Location = new System.Drawing.Point(4, 28);
+            this.tabPageViewDonors.Location = new System.Drawing.Point(4, 29);
             this.tabPageViewDonors.Name = "tabPageViewDonors";
-            this.tabPageViewDonors.Size = new System.Drawing.Size(1053, 410);
+            this.tabPageViewDonors.Size = new System.Drawing.Size(1053, 409);
             this.tabPageViewDonors.TabIndex = 2;
             this.tabPageViewDonors.Text = "Donor List";
             this.tabPageViewDonors.UseVisualStyleBackColor = true;
+            // 
+            // buttonLODrList
+            // 
+            this.buttonLODrList.BackColor = System.Drawing.Color.SeaGreen;
+            this.buttonLODrList.Font = new System.Drawing.Font("Yu Mincho", 11F);
+            this.buttonLODrList.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonLODrList.Location = new System.Drawing.Point(3, 364);
+            this.buttonLODrList.Name = "buttonLODrList";
+            this.buttonLODrList.Size = new System.Drawing.Size(75, 26);
+            this.buttonLODrList.TabIndex = 36;
+            this.buttonLODrList.Text = "Log Out";
+            this.buttonLODrList.UseVisualStyleBackColor = false;
+            this.buttonLODrList.Click += new System.EventHandler(this.buttonLODrList_Click);
             // 
             // dataGridDonor
             // 
@@ -561,18 +655,18 @@
             this.dataGridDonor.BackgroundColor = System.Drawing.Color.SeaGreen;
             this.dataGridDonor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridDonor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.donorNumberDataGridViewTextBoxColumn,
-            this.anonymousDataGridViewCheckBoxColumn1,
-            this.donorTypeDataGridViewTextBoxColumn1,
-            this.donorCompanyNameDataGridViewTextBoxColumn1,
-            this.donorLastNameDataGridViewTextBoxColumn1,
-            this.donorFirstNameDataGridViewTextBoxColumn1,
-            this.donorPhoneNumberDataGridViewTextBoxColumn1,
-            this.donorEmailDataGridViewTextBoxColumn1,
-            this.donorAddressDataGridViewTextBoxColumn1,
-            this.donorCityDataGridViewTextBoxColumn1,
-            this.donorStateDataGridViewTextBoxColumn1,
-            this.donorZipDataGridViewTextBoxColumn1});
+            this.donorTypeDataGridViewTextBoxColumn2,
+            this.donorFirstNameDataGridViewTextBoxColumn2,
+            this.donorLastNameDataGridViewTextBoxColumn2,
+            this.donorCompanyNameDataGridViewTextBoxColumn2,
+            this.donorEmailDataGridViewTextBoxColumn2,
+            this.donorPhoneNumberDataGridViewTextBoxColumn2,
+            this.donorAddressDataGridViewTextBoxColumn2,
+            this.donorCityDataGridViewTextBoxColumn2,
+            this.donorStateDataGridViewTextBoxColumn2,
+            this.donorZipDataGridViewTextBoxColumn2,
+            this.anonymousDataGridViewCheckBoxColumn2,
+            this.dataGridViewTextBoxColumn7});
             this.dataGridDonor.DataSource = this.donorsBindingSource;
             this.dataGridDonor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridDonor.GridColor = System.Drawing.SystemColors.Desktop;
@@ -580,104 +674,92 @@
             this.dataGridDonor.Name = "dataGridDonor";
             this.dataGridDonor.RowHeadersWidth = 62;
             this.dataGridDonor.RowTemplate.Height = 28;
-            this.dataGridDonor.Size = new System.Drawing.Size(1053, 410);
+            this.dataGridDonor.Size = new System.Drawing.Size(1053, 409);
             this.dataGridDonor.TabIndex = 0;
             // 
-            // donorNumberDataGridViewTextBoxColumn
+            // donorTypeDataGridViewTextBoxColumn2
             // 
-            this.donorNumberDataGridViewTextBoxColumn.DataPropertyName = "DonorNumber";
-            this.donorNumberDataGridViewTextBoxColumn.HeaderText = "Number";
-            this.donorNumberDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.donorNumberDataGridViewTextBoxColumn.Name = "donorNumberDataGridViewTextBoxColumn";
-            this.donorNumberDataGridViewTextBoxColumn.Width = 88;
+            this.donorTypeDataGridViewTextBoxColumn2.DataPropertyName = "DonorType";
+            this.donorTypeDataGridViewTextBoxColumn2.HeaderText = "DonorType";
+            this.donorTypeDataGridViewTextBoxColumn2.Name = "donorTypeDataGridViewTextBoxColumn2";
+            this.donorTypeDataGridViewTextBoxColumn2.Width = 112;
             // 
-            // anonymousDataGridViewCheckBoxColumn1
+            // donorFirstNameDataGridViewTextBoxColumn2
             // 
-            this.anonymousDataGridViewCheckBoxColumn1.DataPropertyName = "Anonymous";
-            this.anonymousDataGridViewCheckBoxColumn1.HeaderText = "Anonymous";
-            this.anonymousDataGridViewCheckBoxColumn1.MinimumWidth = 8;
-            this.anonymousDataGridViewCheckBoxColumn1.Name = "anonymousDataGridViewCheckBoxColumn1";
-            this.anonymousDataGridViewCheckBoxColumn1.Width = 94;
+            this.donorFirstNameDataGridViewTextBoxColumn2.DataPropertyName = "DonorFirstName";
+            this.donorFirstNameDataGridViewTextBoxColumn2.HeaderText = "DonorFirstName";
+            this.donorFirstNameDataGridViewTextBoxColumn2.Name = "donorFirstNameDataGridViewTextBoxColumn2";
+            this.donorFirstNameDataGridViewTextBoxColumn2.Width = 147;
             // 
-            // donorTypeDataGridViewTextBoxColumn1
+            // donorLastNameDataGridViewTextBoxColumn2
             // 
-            this.donorTypeDataGridViewTextBoxColumn1.DataPropertyName = "DonorType";
-            this.donorTypeDataGridViewTextBoxColumn1.HeaderText = "Type";
-            this.donorTypeDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorTypeDataGridViewTextBoxColumn1.Name = "donorTypeDataGridViewTextBoxColumn1";
-            this.donorTypeDataGridViewTextBoxColumn1.Width = 68;
+            this.donorLastNameDataGridViewTextBoxColumn2.DataPropertyName = "DonorLastName";
+            this.donorLastNameDataGridViewTextBoxColumn2.HeaderText = "DonorLastName";
+            this.donorLastNameDataGridViewTextBoxColumn2.Name = "donorLastNameDataGridViewTextBoxColumn2";
+            this.donorLastNameDataGridViewTextBoxColumn2.Width = 145;
             // 
-            // donorCompanyNameDataGridViewTextBoxColumn1
+            // donorCompanyNameDataGridViewTextBoxColumn2
             // 
-            this.donorCompanyNameDataGridViewTextBoxColumn1.DataPropertyName = "DonorCompanyName";
-            this.donorCompanyNameDataGridViewTextBoxColumn1.HeaderText = "Company";
-            this.donorCompanyNameDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorCompanyNameDataGridViewTextBoxColumn1.Name = "donorCompanyNameDataGridViewTextBoxColumn1";
-            this.donorCompanyNameDataGridViewTextBoxColumn1.Width = 98;
+            this.donorCompanyNameDataGridViewTextBoxColumn2.DataPropertyName = "DonorCompanyName";
+            this.donorCompanyNameDataGridViewTextBoxColumn2.HeaderText = "DonorCompanyName";
+            this.donorCompanyNameDataGridViewTextBoxColumn2.Name = "donorCompanyNameDataGridViewTextBoxColumn2";
+            this.donorCompanyNameDataGridViewTextBoxColumn2.Width = 181;
             // 
-            // donorLastNameDataGridViewTextBoxColumn1
+            // donorEmailDataGridViewTextBoxColumn2
             // 
-            this.donorLastNameDataGridViewTextBoxColumn1.DataPropertyName = "DonorLastName";
-            this.donorLastNameDataGridViewTextBoxColumn1.HeaderText = "Last";
-            this.donorLastNameDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorLastNameDataGridViewTextBoxColumn1.Name = "donorLastNameDataGridViewTextBoxColumn1";
-            this.donorLastNameDataGridViewTextBoxColumn1.Width = 62;
+            this.donorEmailDataGridViewTextBoxColumn2.DataPropertyName = "DonorEmail";
+            this.donorEmailDataGridViewTextBoxColumn2.HeaderText = "DonorEmail";
+            this.donorEmailDataGridViewTextBoxColumn2.Name = "donorEmailDataGridViewTextBoxColumn2";
+            this.donorEmailDataGridViewTextBoxColumn2.Width = 116;
             // 
-            // donorFirstNameDataGridViewTextBoxColumn1
+            // donorPhoneNumberDataGridViewTextBoxColumn2
             // 
-            this.donorFirstNameDataGridViewTextBoxColumn1.DataPropertyName = "DonorFirstName";
-            this.donorFirstNameDataGridViewTextBoxColumn1.HeaderText = "First";
-            this.donorFirstNameDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorFirstNameDataGridViewTextBoxColumn1.Name = "donorFirstNameDataGridViewTextBoxColumn1";
-            this.donorFirstNameDataGridViewTextBoxColumn1.Width = 64;
+            this.donorPhoneNumberDataGridViewTextBoxColumn2.DataPropertyName = "DonorPhoneNumber";
+            this.donorPhoneNumberDataGridViewTextBoxColumn2.HeaderText = "DonorPhoneNumber";
+            this.donorPhoneNumberDataGridViewTextBoxColumn2.Name = "donorPhoneNumberDataGridViewTextBoxColumn2";
+            this.donorPhoneNumberDataGridViewTextBoxColumn2.Width = 174;
             // 
-            // donorPhoneNumberDataGridViewTextBoxColumn1
+            // donorAddressDataGridViewTextBoxColumn2
             // 
-            this.donorPhoneNumberDataGridViewTextBoxColumn1.DataPropertyName = "DonorPhoneNumber";
-            this.donorPhoneNumberDataGridViewTextBoxColumn1.HeaderText = "Phone";
-            this.donorPhoneNumberDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorPhoneNumberDataGridViewTextBoxColumn1.Name = "donorPhoneNumberDataGridViewTextBoxColumn1";
-            this.donorPhoneNumberDataGridViewTextBoxColumn1.Width = 76;
+            this.donorAddressDataGridViewTextBoxColumn2.DataPropertyName = "DonorAddress";
+            this.donorAddressDataGridViewTextBoxColumn2.HeaderText = "DonorAddress";
+            this.donorAddressDataGridViewTextBoxColumn2.Name = "donorAddressDataGridViewTextBoxColumn2";
+            this.donorAddressDataGridViewTextBoxColumn2.Width = 130;
             // 
-            // donorEmailDataGridViewTextBoxColumn1
+            // donorCityDataGridViewTextBoxColumn2
             // 
-            this.donorEmailDataGridViewTextBoxColumn1.DataPropertyName = "DonorEmail";
-            this.donorEmailDataGridViewTextBoxColumn1.HeaderText = "Email";
-            this.donorEmailDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorEmailDataGridViewTextBoxColumn1.Name = "donorEmailDataGridViewTextBoxColumn1";
-            this.donorEmailDataGridViewTextBoxColumn1.Width = 72;
+            this.donorCityDataGridViewTextBoxColumn2.DataPropertyName = "DonorCity";
+            this.donorCityDataGridViewTextBoxColumn2.HeaderText = "DonorCity";
+            this.donorCityDataGridViewTextBoxColumn2.Name = "donorCityDataGridViewTextBoxColumn2";
+            this.donorCityDataGridViewTextBoxColumn2.Width = 105;
             // 
-            // donorAddressDataGridViewTextBoxColumn1
+            // donorStateDataGridViewTextBoxColumn2
             // 
-            this.donorAddressDataGridViewTextBoxColumn1.DataPropertyName = "DonorAddress";
-            this.donorAddressDataGridViewTextBoxColumn1.HeaderText = "Address";
-            this.donorAddressDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorAddressDataGridViewTextBoxColumn1.Name = "donorAddressDataGridViewTextBoxColumn1";
-            this.donorAddressDataGridViewTextBoxColumn1.Width = 86;
+            this.donorStateDataGridViewTextBoxColumn2.DataPropertyName = "DonorState";
+            this.donorStateDataGridViewTextBoxColumn2.HeaderText = "DonorState";
+            this.donorStateDataGridViewTextBoxColumn2.Name = "donorStateDataGridViewTextBoxColumn2";
+            this.donorStateDataGridViewTextBoxColumn2.Width = 110;
             // 
-            // donorCityDataGridViewTextBoxColumn1
+            // donorZipDataGridViewTextBoxColumn2
             // 
-            this.donorCityDataGridViewTextBoxColumn1.DataPropertyName = "DonorCity";
-            this.donorCityDataGridViewTextBoxColumn1.HeaderText = "City";
-            this.donorCityDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorCityDataGridViewTextBoxColumn1.Name = "donorCityDataGridViewTextBoxColumn1";
-            this.donorCityDataGridViewTextBoxColumn1.Width = 61;
+            this.donorZipDataGridViewTextBoxColumn2.DataPropertyName = "DonorZip";
+            this.donorZipDataGridViewTextBoxColumn2.HeaderText = "DonorZip";
+            this.donorZipDataGridViewTextBoxColumn2.Name = "donorZipDataGridViewTextBoxColumn2";
+            this.donorZipDataGridViewTextBoxColumn2.Width = 101;
             // 
-            // donorStateDataGridViewTextBoxColumn1
+            // anonymousDataGridViewCheckBoxColumn2
             // 
-            this.donorStateDataGridViewTextBoxColumn1.DataPropertyName = "DonorState";
-            this.donorStateDataGridViewTextBoxColumn1.HeaderText = "State";
-            this.donorStateDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorStateDataGridViewTextBoxColumn1.Name = "donorStateDataGridViewTextBoxColumn1";
-            this.donorStateDataGridViewTextBoxColumn1.Width = 66;
+            this.anonymousDataGridViewCheckBoxColumn2.DataPropertyName = "Anonymous";
+            this.anonymousDataGridViewCheckBoxColumn2.HeaderText = "Anonymous";
+            this.anonymousDataGridViewCheckBoxColumn2.Name = "anonymousDataGridViewCheckBoxColumn2";
+            this.anonymousDataGridViewCheckBoxColumn2.Width = 94;
             // 
-            // donorZipDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn7
             // 
-            this.donorZipDataGridViewTextBoxColumn1.DataPropertyName = "DonorZip";
-            this.donorZipDataGridViewTextBoxColumn1.HeaderText = "Zip";
-            this.donorZipDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorZipDataGridViewTextBoxColumn1.Name = "donorZipDataGridViewTextBoxColumn1";
-            this.donorZipDataGridViewTextBoxColumn1.Width = 57;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "DonorNumber";
+            this.dataGridViewTextBoxColumn7.HeaderText = "DonorNumber";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 132;
             // 
             // donorsBindingSource
             // 
@@ -688,6 +770,7 @@
             this.tabPageAddDonations.BackColor = System.Drawing.Color.SeaGreen;
             this.tabPageAddDonations.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPageAddDonations.BackgroundImage")));
             this.tabPageAddDonations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tabPageAddDonations.Controls.Add(this.buttonLODoAdd);
             this.tabPageAddDonations.Controls.Add(this.dateTimePickerDo);
             this.tabPageAddDonations.Controls.Add(this.labelDoNum);
             this.tabPageAddDonations.Controls.Add(this.labelDoDesc);
@@ -704,12 +787,24 @@
             this.tabPageAddDonations.Controls.Add(this.labelDoDate);
             this.tabPageAddDonations.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F);
             this.tabPageAddDonations.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tabPageAddDonations.Location = new System.Drawing.Point(4, 28);
+            this.tabPageAddDonations.Location = new System.Drawing.Point(4, 29);
             this.tabPageAddDonations.Name = "tabPageAddDonations";
             this.tabPageAddDonations.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAddDonations.Size = new System.Drawing.Size(1053, 410);
+            this.tabPageAddDonations.Size = new System.Drawing.Size(1053, 409);
             this.tabPageAddDonations.TabIndex = 0;
             this.tabPageAddDonations.Text = "Donations";
+            // 
+            // buttonLODoAdd
+            // 
+            this.buttonLODoAdd.BackColor = System.Drawing.Color.SeaGreen;
+            this.buttonLODoAdd.Font = new System.Drawing.Font("Yu Mincho", 11F);
+            this.buttonLODoAdd.Location = new System.Drawing.Point(3, 381);
+            this.buttonLODoAdd.Name = "buttonLODoAdd";
+            this.buttonLODoAdd.Size = new System.Drawing.Size(75, 26);
+            this.buttonLODoAdd.TabIndex = 38;
+            this.buttonLODoAdd.Text = "Log Out";
+            this.buttonLODoAdd.UseVisualStyleBackColor = false;
+            this.buttonLODoAdd.Click += new System.EventHandler(this.buttonLODoAdd_Click);
             // 
             // dateTimePickerDo
             // 
@@ -719,7 +814,7 @@
             this.dateTimePickerDo.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerDo.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerDo.Name = "dateTimePickerDo";
-            this.dateTimePickerDo.Size = new System.Drawing.Size(32664, 32);
+            this.dateTimePickerDo.Size = new System.Drawing.Size(251, 32);
             this.dateTimePickerDo.TabIndex = 37;
             this.toolTip2.SetToolTip(this.dateTimePickerDo, "When was the donation entered?");
             this.dateTimePickerDo.Value = new System.DateTime(2022, 4, 25, 0, 0, 0, 0);
@@ -909,13 +1004,27 @@
             // 
             // tabPageViewDonations
             // 
+            this.tabPageViewDonations.Controls.Add(this.buttonLODoList);
             this.tabPageViewDonations.Controls.Add(this.dataGridDonations);
-            this.tabPageViewDonations.Location = new System.Drawing.Point(4, 28);
+            this.tabPageViewDonations.Location = new System.Drawing.Point(4, 29);
             this.tabPageViewDonations.Name = "tabPageViewDonations";
-            this.tabPageViewDonations.Size = new System.Drawing.Size(1053, 410);
+            this.tabPageViewDonations.Size = new System.Drawing.Size(1053, 409);
             this.tabPageViewDonations.TabIndex = 5;
             this.tabPageViewDonations.Text = "Donation List";
             this.tabPageViewDonations.UseVisualStyleBackColor = true;
+            // 
+            // buttonLODoList
+            // 
+            this.buttonLODoList.BackColor = System.Drawing.Color.SeaGreen;
+            this.buttonLODoList.Font = new System.Drawing.Font("Yu Mincho", 11F);
+            this.buttonLODoList.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonLODoList.Location = new System.Drawing.Point(3, 381);
+            this.buttonLODoList.Name = "buttonLODoList";
+            this.buttonLODoList.Size = new System.Drawing.Size(75, 26);
+            this.buttonLODoList.TabIndex = 39;
+            this.buttonLODoList.Text = "Log Out";
+            this.buttonLODoList.UseVisualStyleBackColor = false;
+            this.buttonLODoList.Click += new System.EventHandler(this.buttonLODoList_Click);
             // 
             // dataGridDonations
             // 
@@ -938,7 +1047,7 @@
             this.dataGridDonations.Name = "dataGridDonations";
             this.dataGridDonations.RowHeadersWidth = 62;
             this.dataGridDonations.RowTemplate.Height = 28;
-            this.dataGridDonations.Size = new System.Drawing.Size(1053, 410);
+            this.dataGridDonations.Size = new System.Drawing.Size(1053, 409);
             this.dataGridDonations.TabIndex = 0;
             this.toolTip1.SetToolTip(this.dataGridDonations, "List of all donations made.");
             // 
@@ -996,12 +1105,115 @@
             // 
             // tabPageMailingList
             // 
+            this.tabPageMailingList.Controls.Add(this.splitContainerMail);
             this.tabPageMailingList.Location = new System.Drawing.Point(4, 28);
             this.tabPageMailingList.Name = "tabPageMailingList";
             this.tabPageMailingList.Size = new System.Drawing.Size(1053, 410);
             this.tabPageMailingList.TabIndex = 6;
             this.tabPageMailingList.Text = "Mailing List";
             this.tabPageMailingList.UseVisualStyleBackColor = true;
+            // 
+            // splitContainerMail
+            // 
+            this.splitContainerMail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerMail.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerMail.Name = "splitContainerMail";
+            // 
+            // splitContainerMail.Panel1
+            // 
+            this.splitContainerMail.Panel1.BackColor = System.Drawing.Color.SeaGreen;
+            this.splitContainerMail.Panel1.Controls.Add(this.labelML);
+            this.splitContainerMail.Panel1.Controls.Add(this.button3);
+            this.splitContainerMail.Panel1.Controls.Add(this.textBoxML);
+            this.splitContainerMail.Panel1.Controls.Add(this.labelMLEnter);
+            this.splitContainerMail.Panel1.Controls.Add(this.buttonLOML);
+            // 
+            // splitContainerMail.Panel2
+            // 
+            this.splitContainerMail.Panel2.Controls.Add(this.listBoxMail);
+            this.splitContainerMail.Size = new System.Drawing.Size(1053, 410);
+            this.splitContainerMail.SplitterDistance = 188;
+            this.splitContainerMail.TabIndex = 0;
+            // 
+            // labelML
+            // 
+            this.labelML.AutoSize = true;
+            this.labelML.BackColor = System.Drawing.Color.DarkCyan;
+            this.labelML.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelML.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.labelML.Font = new System.Drawing.Font("Yu Mincho Demibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelML.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelML.Location = new System.Drawing.Point(30, 27);
+            this.labelML.Name = "labelML";
+            this.labelML.Size = new System.Drawing.Size(119, 27);
+            this.labelML.TabIndex = 44;
+            this.labelML.Text = "Mailing List";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.SeaGreen;
+            this.button3.Font = new System.Drawing.Font("Yu Mincho", 11F);
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(48, 228);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(85, 26);
+            this.button3.TabIndex = 43;
+            this.button3.Text = "Submit";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // textBoxML
+            // 
+            this.textBoxML.Location = new System.Drawing.Point(21, 191);
+            this.textBoxML.Name = "textBoxML";
+            this.textBoxML.Size = new System.Drawing.Size(140, 31);
+            this.textBoxML.TabIndex = 42;
+            // 
+            // labelMLEnter
+            // 
+            this.labelMLEnter.AutoSize = true;
+            this.labelMLEnter.BackColor = System.Drawing.Color.DarkCyan;
+            this.labelMLEnter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelMLEnter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.labelMLEnter.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelMLEnter.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelMLEnter.Location = new System.Drawing.Point(48, 157);
+            this.labelMLEnter.Name = "labelMLEnter";
+            this.labelMLEnter.Size = new System.Drawing.Size(85, 22);
+            this.labelMLEnter.TabIndex = 41;
+            this.labelMLEnter.Text = "Add Email:";
+            // 
+            // buttonLOML
+            // 
+            this.buttonLOML.BackColor = System.Drawing.Color.SeaGreen;
+            this.buttonLOML.Font = new System.Drawing.Font("Yu Mincho", 11F);
+            this.buttonLOML.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonLOML.Location = new System.Drawing.Point(3, 381);
+            this.buttonLOML.Name = "buttonLOML";
+            this.buttonLOML.Size = new System.Drawing.Size(75, 26);
+            this.buttonLOML.TabIndex = 39;
+            this.buttonLOML.Text = "Log Out";
+            this.buttonLOML.UseVisualStyleBackColor = false;
+            this.buttonLOML.Click += new System.EventHandler(this.buttonLOML_Click);
+            // 
+            // listBoxMail
+            // 
+            this.listBoxMail.BackColor = System.Drawing.Color.SeaGreen;
+            this.listBoxMail.DataSource = this.mailingListBindingSource;
+            this.listBoxMail.DisplayMember = "EmailAddress";
+            this.listBoxMail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxMail.ForeColor = System.Drawing.SystemColors.Control;
+            this.listBoxMail.FormattingEnabled = true;
+            this.listBoxMail.ItemHeight = 19;
+            this.listBoxMail.Location = new System.Drawing.Point(0, 0);
+            this.listBoxMail.Name = "listBoxMail";
+            this.listBoxMail.Size = new System.Drawing.Size(861, 410);
+            this.listBoxMail.TabIndex = 0;
+            this.listBoxMail.ValueMember = "EmailAddress";
+            // 
+            // mailingListBindingSource
+            // 
+            this.mailingListBindingSource.DataSource = typeof(Grizzlies_Helping_Grizzlies.MailingList);
             // 
             // anonymousDataGridViewCheckBoxColumn
             // 
@@ -1105,38 +1317,6 @@
             // 
             this.toolTip2.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip2_Popup);
             // 
-            // labelUsr
-            // 
-            this.labelUsr.AutoSize = true;
-            this.labelUsr.Location = new System.Drawing.Point(424, 86);
-            this.labelUsr.Name = "labelUsr";
-            this.labelUsr.Size = new System.Drawing.Size(76, 19);
-            this.labelUsr.TabIndex = 1;
-            this.labelUsr.Text = "Username";
-            // 
-            // labelPwd
-            // 
-            this.labelPwd.AutoSize = true;
-            this.labelPwd.Location = new System.Drawing.Point(429, 157);
-            this.labelPwd.Name = "labelPwd";
-            this.labelPwd.Size = new System.Drawing.Size(71, 19);
-            this.labelPwd.TabIndex = 2;
-            this.labelPwd.Text = "Password";
-            // 
-            // textBoxUsr
-            // 
-            this.textBoxUsr.Location = new System.Drawing.Point(505, 83);
-            this.textBoxUsr.Name = "textBoxUsr";
-            this.textBoxUsr.Size = new System.Drawing.Size(100, 31);
-            this.textBoxUsr.TabIndex = 3;
-            // 
-            // textBoxPwd
-            // 
-            this.textBoxPwd.Location = new System.Drawing.Point(506, 154);
-            this.textBoxPwd.Name = "textBoxPwd";
-            this.textBoxPwd.Size = new System.Drawing.Size(100, 31);
-            this.textBoxPwd.TabIndex = 4;
-            // 
             // GHGForm
             // 
             this.ClientSize = new System.Drawing.Size(1061, 442);
@@ -1161,6 +1341,13 @@
             this.tabPageViewDonations.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDonations)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donationsBindingSource)).EndInit();
+            this.tabPageMailingList.ResumeLayout(false);
+            this.splitContainerMail.Panel1.ResumeLayout(false);
+            this.splitContainerMail.Panel1.PerformLayout();
+            this.splitContainerMail.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMail)).EndInit();
+            this.splitContainerMail.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mailingListBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1261,6 +1448,31 @@
         private System.Windows.Forms.TextBox textBoxUsr;
         private System.Windows.Forms.Label labelPwd;
         private System.Windows.Forms.Label labelUsr;
+        private System.Windows.Forms.SplitContainer splitContainerMail;
+        private System.Windows.Forms.ListBox listBoxMail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorTypeDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorFirstNameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorLastNameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorCompanyNameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorEmailDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorPhoneNumberDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorAddressDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorCityDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorStateDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorZipDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn anonymousDataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.BindingSource mailingListBindingSource;
+        private System.Windows.Forms.Button buttonLODrAdd;
+        private System.Windows.Forms.Button buttonLODrList;
+        private System.Windows.Forms.Button buttonLODoAdd;
+        private System.Windows.Forms.Button buttonLODoList;
+        private System.Windows.Forms.Label labelMLEnter;
+        private System.Windows.Forms.Button buttonLOML;
+        private System.Windows.Forms.TextBox textBoxML;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label labelML;
+        private System.Windows.Forms.CheckBox checkBoxML;
     }
 }
 

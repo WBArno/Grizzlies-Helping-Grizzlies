@@ -60,6 +60,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="lib.cs" />
+    <Compile Include="MailingList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -77,6 +78,7 @@
     </Compile>
     <None Include="Properties\DataSources\Donations.datasource" />
     <None Include="Properties\DataSources\Donors.datasource" />
+    <None Include="Properties\DataSources\MailingList.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

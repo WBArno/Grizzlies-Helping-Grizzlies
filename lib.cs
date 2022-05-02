@@ -201,6 +201,11 @@ namespace Grizzlies_Helping_Grizzlies
                 MessageBox.Show("Please enter a valid company name.", "Invalid Entry");
                 return false;
             }
+            else if (!isValidAddress(donorEmail))
+            {
+                MessageBox.Show("Please enter a valid email address.", "Invalid Entry");
+                return false;
+            }
             else return true;
         }
 
@@ -247,6 +252,38 @@ namespace Grizzlies_Helping_Grizzlies
             {
                 return false;
             }
+        }
+
+
+
+
+
+        public bool isValidAddress(string emailAddress)
+        {
+            int atCount = 0;
+            int dotCount = 0;
+            foreach (char letter in emailAddress)
+            {
+                if (letter == '@')
+                {
+                    atCount++;
+                }
+                else if (letter == '.')
+                {
+                    dotCount++;
+                }
+
+                if (dotCount > 1 || atCount > 1)
+                {
+                    return false;
+                }
+            }
+
+            if (atCount != 1 || dotCount != 1)
+            {
+                return false;
+            }
+            else { return true; }
         }
     }
 }
