@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,8 +32,11 @@ namespace Grizzlies_Helping_Grizzlies
                 donationsBindingSource.Add(dObj);
             }
             labelDoNum.Text = Convert.ToString(lib.donationNumber + 1);
-        }
 
+            // Hides initial tabs for login form
+            logIn(true);
+        }
+        
         Lib lib = new Lib();
 
 
@@ -72,6 +75,14 @@ namespace Grizzlies_Helping_Grizzlies
                     numBoxValue.Value, comboBoxDoType.Text, textBoxDoDesc.Text);
                 donationsBindingSource.Add(DoObj);
                 clearFields(false);
+            }
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            if (textBoxUsr.Text.ToLower() == "admin" && textBoxPwd.Text != "")
+            {
+                logIn(false);
             }
         }
 
@@ -133,6 +144,31 @@ namespace Grizzlies_Helping_Grizzlies
                 textBoxDoDesc.Text = "(Optional)";
             }    
         }
-        
+
+        private void logIn(bool userLoggedIn) // And Out
+        {
+            if (!userLoggedIn)
+            {
+                tabControl.TabPages.Add(tabPageAddDonors);
+                tabControl.TabPages.Add(tabPageViewDonors);
+                tabControl.TabPages.Add(tabPageAddDonations);
+                tabControl.TabPages.Add(tabPageViewDonations);
+                tabControl.TabPages.Add(tabPageMailingList);
+                tabControl.TabPages.Remove(tabPageLogin);
+            }
+            else
+            {
+                tabControl.TabPages.Remove(tabPageAddDonations);
+                tabControl.TabPages.Remove(tabPageAddDonors);
+                tabControl.TabPages.Remove(tabPageViewDonations);
+                tabControl.TabPages.Remove(tabPageViewDonors);
+                tabControl.TabPages.Remove(tabPageMailingList);
+                if (!tabControl.TabPages.Contains(tabPageLogin))
+                {
+                    tabControl.TabPages.Add(tabPageLogin);
+                }
+            }
+
+        }
     }
 }

@@ -32,6 +32,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GHGForm));
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPageLogin = new System.Windows.Forms.TabPage();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.tabPageAddDonors = new System.Windows.Forms.TabPage();
             this.labelDrNum = new System.Windows.Forms.Label();
             this.labelDrID = new System.Windows.Forms.Label();
@@ -61,6 +63,19 @@
             this.textBoxDrState = new System.Windows.Forms.TextBox();
             this.tabPageViewDonors = new System.Windows.Forms.TabPage();
             this.dataGridDonor = new System.Windows.Forms.DataGridView();
+            this.donorNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anonymousDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.donorTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorCompanyNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorLastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorFirstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorPhoneNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorEmailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorAddressDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorCityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorStateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorZipDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageAddDonations = new System.Windows.Forms.TabPage();
             this.dateTimePickerDo = new System.Windows.Forms.DateTimePicker();
             this.labelDoNum = new System.Windows.Forms.Label();
@@ -78,6 +93,14 @@
             this.labelDoDate = new System.Windows.Forms.Label();
             this.tabPageViewDonations = new System.Windows.Forms.TabPage();
             this.dataGridDonations = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPageMailingList = new System.Windows.Forms.TabPage();
             this.anonymousDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.donorTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorCompanyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,53 +115,65 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.donorNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anonymousDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.donorTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorCompanyNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorLastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorFirstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorPhoneNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorEmailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorAddressDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorCityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorStateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorZipDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.donationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelUsr = new System.Windows.Forms.Label();
+            this.labelPwd = new System.Windows.Forms.Label();
+            this.textBoxUsr = new System.Windows.Forms.TextBox();
+            this.textBoxPwd = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
+            this.tabPageLogin.SuspendLayout();
             this.tabPageAddDonors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMascot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxDrZip)).BeginInit();
             this.tabPageViewDonors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDonor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource)).BeginInit();
             this.tabPageAddDonations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numBoxValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBoxDrID)).BeginInit();
             this.tabPageViewDonations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDonations)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donationsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
             // 
+            this.tabControl.Controls.Add(this.tabPageLogin);
             this.tabControl.Controls.Add(this.tabPageAddDonors);
             this.tabControl.Controls.Add(this.tabPageViewDonors);
             this.tabControl.Controls.Add(this.tabPageAddDonations);
             this.tabControl.Controls.Add(this.tabPageViewDonations);
+            this.tabControl.Controls.Add(this.tabPageMailingList);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Multiline = true;
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1070, 544);
+            this.tabControl.Size = new System.Drawing.Size(1061, 442);
             this.tabControl.TabIndex = 0;
+            // 
+            // tabPageLogin
+            // 
+            this.tabPageLogin.Controls.Add(this.textBoxPwd);
+            this.tabPageLogin.Controls.Add(this.textBoxUsr);
+            this.tabPageLogin.Controls.Add(this.labelPwd);
+            this.tabPageLogin.Controls.Add(this.labelUsr);
+            this.tabPageLogin.Controls.Add(this.buttonLogin);
+            this.tabPageLogin.Location = new System.Drawing.Point(4, 28);
+            this.tabPageLogin.Name = "tabPageLogin";
+            this.tabPageLogin.Size = new System.Drawing.Size(1053, 410);
+            this.tabPageLogin.TabIndex = 7;
+            this.tabPageLogin.Text = "Login";
+            this.tabPageLogin.UseVisualStyleBackColor = true;
+            // 
+            // buttonLogin
+            // 
+            this.buttonLogin.Location = new System.Drawing.Point(453, 223);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(99, 48);
+            this.buttonLogin.TabIndex = 0;
+            this.buttonLogin.Text = "Login";
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // tabPageAddDonors
             // 
@@ -172,10 +207,10 @@
             this.tabPageAddDonors.Controls.Add(this.labelDrCity);
             this.tabPageAddDonors.Controls.Add(this.textBoxDrState);
             this.tabPageAddDonors.Font = new System.Drawing.Font("Yu Mincho Demibold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.tabPageAddDonors.Location = new System.Drawing.Point(4, 37);
+            this.tabPageAddDonors.Location = new System.Drawing.Point(4, 28);
             this.tabPageAddDonors.Name = "tabPageAddDonors";
             this.tabPageAddDonors.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAddDonors.Size = new System.Drawing.Size(1062, 503);
+            this.tabPageAddDonors.Size = new System.Drawing.Size(1053, 410);
             this.tabPageAddDonors.TabIndex = 4;
             this.tabPageAddDonors.Text = "Donors";
             // 
@@ -189,7 +224,7 @@
             this.labelDrNum.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelDrNum.Location = new System.Drawing.Point(589, 16);
             this.labelDrNum.Name = "labelDrNum";
-            this.labelDrNum.Size = new System.Drawing.Size(27, 32);
+            this.labelDrNum.Size = new System.Drawing.Size(19, 22);
             this.labelDrNum.TabIndex = 34;
             this.labelDrNum.Text = "1";
             // 
@@ -203,7 +238,7 @@
             this.labelDrID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelDrID.Location = new System.Drawing.Point(431, 16);
             this.labelDrID.Name = "labelDrID";
-            this.labelDrID.Size = new System.Drawing.Size(127, 32);
+            this.labelDrID.Size = new System.Drawing.Size(83, 22);
             this.labelDrID.TabIndex = 33;
             this.labelDrID.Text = "Donor ID:";
             // 
@@ -229,7 +264,7 @@
             this.labelDrEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelDrEmail.Location = new System.Drawing.Point(115, 221);
             this.labelDrEmail.Name = "labelDrEmail";
-            this.labelDrEmail.Size = new System.Drawing.Size(74, 32);
+            this.labelDrEmail.Size = new System.Drawing.Size(49, 22);
             this.labelDrEmail.TabIndex = 25;
             this.labelDrEmail.Text = "Email";
             // 
@@ -243,7 +278,7 @@
             this.labelDrAddress.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelDrAddress.Location = new System.Drawing.Point(58, 173);
             this.labelDrAddress.Name = "labelDrAddress";
-            this.labelDrAddress.Size = new System.Drawing.Size(167, 32);
+            this.labelDrAddress.Size = new System.Drawing.Size(107, 22);
             this.labelDrAddress.TabIndex = 24;
             this.labelDrAddress.Text = "Street Address";
             // 
@@ -262,7 +297,7 @@
             0,
             0});
             this.textBoxDrZip.Name = "textBoxDrZip";
-            this.textBoxDrZip.Size = new System.Drawing.Size(251, 44);
+            this.textBoxDrZip.Size = new System.Drawing.Size(251, 32);
             this.textBoxDrZip.TabIndex = 23;
             this.toolTip1.SetToolTip(this.textBoxDrZip, "Enter the ZIP of the donor.");
             // 
@@ -290,7 +325,7 @@
             "Company"});
             this.comboBoxDrType.Location = new System.Drawing.Point(171, 78);
             this.comboBoxDrType.Name = "comboBoxDrType";
-            this.comboBoxDrType.Size = new System.Drawing.Size(250, 38);
+            this.comboBoxDrType.Size = new System.Drawing.Size(250, 28);
             this.comboBoxDrType.TabIndex = 0;
             this.toolTip1.SetToolTip(this.comboBoxDrType, "Choose the type of donor.");
             this.comboBoxDrType.SelectedIndexChanged += new System.EventHandler(this.comboBoxDrType_SelectedIndexChanged_1);
@@ -314,7 +349,7 @@
             this.textBoxDrPNumber.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.textBoxDrPNumber.Location = new System.Drawing.Point(614, 163);
             this.textBoxDrPNumber.Name = "textBoxDrPNumber";
-            this.textBoxDrPNumber.Size = new System.Drawing.Size(251, 44);
+            this.textBoxDrPNumber.Size = new System.Drawing.Size(251, 32);
             this.textBoxDrPNumber.TabIndex = 15;
             this.toolTip1.SetToolTip(this.textBoxDrPNumber, "Enter the ten-digit phone number (no spaces or characters)");
             // 
@@ -328,7 +363,7 @@
             this.labelDrPNumber.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelDrPNumber.Location = new System.Drawing.Point(494, 166);
             this.labelDrPNumber.Name = "labelDrPNumber";
-            this.labelDrPNumber.Size = new System.Drawing.Size(174, 32);
+            this.labelDrPNumber.Size = new System.Drawing.Size(114, 22);
             this.labelDrPNumber.TabIndex = 6;
             this.labelDrPNumber.Text = "Phone Number";
             // 
@@ -340,7 +375,7 @@
             this.checkBoxAnon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.checkBoxAnon.Location = new System.Drawing.Point(431, 360);
             this.checkBoxAnon.Name = "checkBoxAnon";
-            this.checkBoxAnon.Size = new System.Drawing.Size(272, 34);
+            this.checkBoxAnon.Size = new System.Drawing.Size(177, 24);
             this.checkBoxAnon.TabIndex = 20;
             this.checkBoxAnon.Text = "Register Anonymously";
             this.toolTip1.SetToolTip(this.checkBoxAnon, "Check this if the donor wants to remain anonymous.");
@@ -351,7 +386,7 @@
             this.textBoxDrCity.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.textBoxDrCity.Location = new System.Drawing.Point(614, 212);
             this.textBoxDrCity.Name = "textBoxDrCity";
-            this.textBoxDrCity.Size = new System.Drawing.Size(251, 44);
+            this.textBoxDrCity.Size = new System.Drawing.Size(251, 32);
             this.textBoxDrCity.TabIndex = 16;
             this.toolTip1.SetToolTip(this.textBoxDrCity, "Enter the city the donor lives in.");
             // 
@@ -365,7 +400,7 @@
             this.labelDrZip.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelDrZip.Location = new System.Drawing.Point(89, 272);
             this.labelDrZip.Name = "labelDrZip";
-            this.labelDrZip.Size = new System.Drawing.Size(117, 32);
+            this.labelDrZip.Size = new System.Drawing.Size(76, 22);
             this.labelDrZip.TabIndex = 10;
             this.labelDrZip.Text = "ZIP Code";
             // 
@@ -374,7 +409,7 @@
             this.textBoxDrAddress.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.textBoxDrAddress.Location = new System.Drawing.Point(171, 169);
             this.textBoxDrAddress.Name = "textBoxDrAddress";
-            this.textBoxDrAddress.Size = new System.Drawing.Size(251, 44);
+            this.textBoxDrAddress.Size = new System.Drawing.Size(251, 32);
             this.textBoxDrAddress.TabIndex = 14;
             this.toolTip1.SetToolTip(this.textBoxDrAddress, "Enter the donor\'s address.");
             // 
@@ -388,7 +423,7 @@
             this.labelDrType.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelDrType.Location = new System.Drawing.Point(71, 81);
             this.labelDrType.Name = "labelDrType";
-            this.labelDrType.Size = new System.Drawing.Size(143, 32);
+            this.labelDrType.Size = new System.Drawing.Size(94, 22);
             this.labelDrType.TabIndex = 1;
             this.labelDrType.Text = "Donor Type";
             // 
@@ -402,7 +437,7 @@
             this.labelDrFName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelDrFName.Location = new System.Drawing.Point(80, 125);
             this.labelDrFName.Name = "labelDrFName";
-            this.labelDrFName.Size = new System.Drawing.Size(132, 32);
+            this.labelDrFName.Size = new System.Drawing.Size(85, 22);
             this.labelDrFName.TabIndex = 4;
             this.labelDrFName.Text = "First Name";
             // 
@@ -411,7 +446,7 @@
             this.textBoxDrFName.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.textBoxDrFName.Location = new System.Drawing.Point(171, 120);
             this.textBoxDrFName.Name = "textBoxDrFName";
-            this.textBoxDrFName.Size = new System.Drawing.Size(251, 44);
+            this.textBoxDrFName.Size = new System.Drawing.Size(251, 32);
             this.textBoxDrFName.TabIndex = 11;
             this.toolTip1.SetToolTip(this.textBoxDrFName, "Enter the donor\'s first name.");
             // 
@@ -420,7 +455,7 @@
             this.textBoxDrEmail.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.textBoxDrEmail.Location = new System.Drawing.Point(170, 218);
             this.textBoxDrEmail.Name = "textBoxDrEmail";
-            this.textBoxDrEmail.Size = new System.Drawing.Size(251, 44);
+            this.textBoxDrEmail.Size = new System.Drawing.Size(251, 32);
             this.textBoxDrEmail.TabIndex = 17;
             this.toolTip1.SetToolTip(this.textBoxDrEmail, "Enter the email of the donor.");
             // 
@@ -434,7 +469,7 @@
             this.labelDrState.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelDrState.Location = new System.Drawing.Point(564, 265);
             this.labelDrState.Name = "labelDrState";
-            this.labelDrState.Size = new System.Drawing.Size(67, 32);
+            this.labelDrState.Size = new System.Drawing.Size(44, 22);
             this.labelDrState.TabIndex = 9;
             this.labelDrState.Text = "State";
             // 
@@ -443,7 +478,7 @@
             this.textBoxDrCompany.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.textBoxDrCompany.Location = new System.Drawing.Point(614, 65);
             this.textBoxDrCompany.Name = "textBoxDrCompany";
-            this.textBoxDrCompany.Size = new System.Drawing.Size(251, 44);
+            this.textBoxDrCompany.Size = new System.Drawing.Size(251, 32);
             this.textBoxDrCompany.TabIndex = 13;
             this.toolTip1.SetToolTip(this.textBoxDrCompany, "Enter the company name.");
             this.textBoxDrCompany.Visible = false;
@@ -458,7 +493,7 @@
             this.labelDrCompany.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelDrCompany.Location = new System.Drawing.Point(489, 68);
             this.labelDrCompany.Name = "labelDrCompany";
-            this.labelDrCompany.Size = new System.Drawing.Size(182, 32);
+            this.labelDrCompany.Size = new System.Drawing.Size(119, 22);
             this.labelDrCompany.TabIndex = 2;
             this.labelDrCompany.Text = "Company Name";
             this.labelDrCompany.Visible = false;
@@ -473,7 +508,7 @@
             this.labelDrLName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelDrLName.Location = new System.Drawing.Point(525, 118);
             this.labelDrLName.Name = "labelDrLName";
-            this.labelDrLName.Size = new System.Drawing.Size(128, 32);
+            this.labelDrLName.Size = new System.Drawing.Size(83, 22);
             this.labelDrLName.TabIndex = 3;
             this.labelDrLName.Text = "Last Name";
             // 
@@ -482,7 +517,7 @@
             this.textBoxDrLName.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.textBoxDrLName.Location = new System.Drawing.Point(614, 115);
             this.textBoxDrLName.Name = "textBoxDrLName";
-            this.textBoxDrLName.Size = new System.Drawing.Size(251, 44);
+            this.textBoxDrLName.Size = new System.Drawing.Size(251, 32);
             this.textBoxDrLName.TabIndex = 12;
             this.toolTip1.SetToolTip(this.textBoxDrLName, "Enter the donor\'s last name.");
             // 
@@ -496,7 +531,7 @@
             this.labelDrCity.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelDrCity.Location = new System.Drawing.Point(570, 215);
             this.labelDrCity.Name = "labelDrCity";
-            this.labelDrCity.Size = new System.Drawing.Size(58, 32);
+            this.labelDrCity.Size = new System.Drawing.Size(38, 22);
             this.labelDrCity.TabIndex = 8;
             this.labelDrCity.Text = "City";
             // 
@@ -505,16 +540,16 @@
             this.textBoxDrState.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.textBoxDrState.Location = new System.Drawing.Point(614, 262);
             this.textBoxDrState.Name = "textBoxDrState";
-            this.textBoxDrState.Size = new System.Drawing.Size(251, 44);
+            this.textBoxDrState.Size = new System.Drawing.Size(251, 32);
             this.textBoxDrState.TabIndex = 18;
             this.toolTip1.SetToolTip(this.textBoxDrState, "Enter the State of the donor.");
             // 
             // tabPageViewDonors
             // 
             this.tabPageViewDonors.Controls.Add(this.dataGridDonor);
-            this.tabPageViewDonors.Location = new System.Drawing.Point(4, 29);
+            this.tabPageViewDonors.Location = new System.Drawing.Point(4, 28);
             this.tabPageViewDonors.Name = "tabPageViewDonors";
-            this.tabPageViewDonors.Size = new System.Drawing.Size(1062, 511);
+            this.tabPageViewDonors.Size = new System.Drawing.Size(1053, 410);
             this.tabPageViewDonors.TabIndex = 2;
             this.tabPageViewDonors.Text = "Donor List";
             this.tabPageViewDonors.UseVisualStyleBackColor = true;
@@ -545,8 +580,108 @@
             this.dataGridDonor.Name = "dataGridDonor";
             this.dataGridDonor.RowHeadersWidth = 62;
             this.dataGridDonor.RowTemplate.Height = 28;
-            this.dataGridDonor.Size = new System.Drawing.Size(1062, 511);
+            this.dataGridDonor.Size = new System.Drawing.Size(1053, 410);
             this.dataGridDonor.TabIndex = 0;
+            // 
+            // donorNumberDataGridViewTextBoxColumn
+            // 
+            this.donorNumberDataGridViewTextBoxColumn.DataPropertyName = "DonorNumber";
+            this.donorNumberDataGridViewTextBoxColumn.HeaderText = "Number";
+            this.donorNumberDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.donorNumberDataGridViewTextBoxColumn.Name = "donorNumberDataGridViewTextBoxColumn";
+            this.donorNumberDataGridViewTextBoxColumn.Width = 88;
+            // 
+            // anonymousDataGridViewCheckBoxColumn1
+            // 
+            this.anonymousDataGridViewCheckBoxColumn1.DataPropertyName = "Anonymous";
+            this.anonymousDataGridViewCheckBoxColumn1.HeaderText = "Anonymous";
+            this.anonymousDataGridViewCheckBoxColumn1.MinimumWidth = 8;
+            this.anonymousDataGridViewCheckBoxColumn1.Name = "anonymousDataGridViewCheckBoxColumn1";
+            this.anonymousDataGridViewCheckBoxColumn1.Width = 94;
+            // 
+            // donorTypeDataGridViewTextBoxColumn1
+            // 
+            this.donorTypeDataGridViewTextBoxColumn1.DataPropertyName = "DonorType";
+            this.donorTypeDataGridViewTextBoxColumn1.HeaderText = "Type";
+            this.donorTypeDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.donorTypeDataGridViewTextBoxColumn1.Name = "donorTypeDataGridViewTextBoxColumn1";
+            this.donorTypeDataGridViewTextBoxColumn1.Width = 68;
+            // 
+            // donorCompanyNameDataGridViewTextBoxColumn1
+            // 
+            this.donorCompanyNameDataGridViewTextBoxColumn1.DataPropertyName = "DonorCompanyName";
+            this.donorCompanyNameDataGridViewTextBoxColumn1.HeaderText = "Company";
+            this.donorCompanyNameDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.donorCompanyNameDataGridViewTextBoxColumn1.Name = "donorCompanyNameDataGridViewTextBoxColumn1";
+            this.donorCompanyNameDataGridViewTextBoxColumn1.Width = 98;
+            // 
+            // donorLastNameDataGridViewTextBoxColumn1
+            // 
+            this.donorLastNameDataGridViewTextBoxColumn1.DataPropertyName = "DonorLastName";
+            this.donorLastNameDataGridViewTextBoxColumn1.HeaderText = "Last";
+            this.donorLastNameDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.donorLastNameDataGridViewTextBoxColumn1.Name = "donorLastNameDataGridViewTextBoxColumn1";
+            this.donorLastNameDataGridViewTextBoxColumn1.Width = 62;
+            // 
+            // donorFirstNameDataGridViewTextBoxColumn1
+            // 
+            this.donorFirstNameDataGridViewTextBoxColumn1.DataPropertyName = "DonorFirstName";
+            this.donorFirstNameDataGridViewTextBoxColumn1.HeaderText = "First";
+            this.donorFirstNameDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.donorFirstNameDataGridViewTextBoxColumn1.Name = "donorFirstNameDataGridViewTextBoxColumn1";
+            this.donorFirstNameDataGridViewTextBoxColumn1.Width = 64;
+            // 
+            // donorPhoneNumberDataGridViewTextBoxColumn1
+            // 
+            this.donorPhoneNumberDataGridViewTextBoxColumn1.DataPropertyName = "DonorPhoneNumber";
+            this.donorPhoneNumberDataGridViewTextBoxColumn1.HeaderText = "Phone";
+            this.donorPhoneNumberDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.donorPhoneNumberDataGridViewTextBoxColumn1.Name = "donorPhoneNumberDataGridViewTextBoxColumn1";
+            this.donorPhoneNumberDataGridViewTextBoxColumn1.Width = 76;
+            // 
+            // donorEmailDataGridViewTextBoxColumn1
+            // 
+            this.donorEmailDataGridViewTextBoxColumn1.DataPropertyName = "DonorEmail";
+            this.donorEmailDataGridViewTextBoxColumn1.HeaderText = "Email";
+            this.donorEmailDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.donorEmailDataGridViewTextBoxColumn1.Name = "donorEmailDataGridViewTextBoxColumn1";
+            this.donorEmailDataGridViewTextBoxColumn1.Width = 72;
+            // 
+            // donorAddressDataGridViewTextBoxColumn1
+            // 
+            this.donorAddressDataGridViewTextBoxColumn1.DataPropertyName = "DonorAddress";
+            this.donorAddressDataGridViewTextBoxColumn1.HeaderText = "Address";
+            this.donorAddressDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.donorAddressDataGridViewTextBoxColumn1.Name = "donorAddressDataGridViewTextBoxColumn1";
+            this.donorAddressDataGridViewTextBoxColumn1.Width = 86;
+            // 
+            // donorCityDataGridViewTextBoxColumn1
+            // 
+            this.donorCityDataGridViewTextBoxColumn1.DataPropertyName = "DonorCity";
+            this.donorCityDataGridViewTextBoxColumn1.HeaderText = "City";
+            this.donorCityDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.donorCityDataGridViewTextBoxColumn1.Name = "donorCityDataGridViewTextBoxColumn1";
+            this.donorCityDataGridViewTextBoxColumn1.Width = 61;
+            // 
+            // donorStateDataGridViewTextBoxColumn1
+            // 
+            this.donorStateDataGridViewTextBoxColumn1.DataPropertyName = "DonorState";
+            this.donorStateDataGridViewTextBoxColumn1.HeaderText = "State";
+            this.donorStateDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.donorStateDataGridViewTextBoxColumn1.Name = "donorStateDataGridViewTextBoxColumn1";
+            this.donorStateDataGridViewTextBoxColumn1.Width = 66;
+            // 
+            // donorZipDataGridViewTextBoxColumn1
+            // 
+            this.donorZipDataGridViewTextBoxColumn1.DataPropertyName = "DonorZip";
+            this.donorZipDataGridViewTextBoxColumn1.HeaderText = "Zip";
+            this.donorZipDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.donorZipDataGridViewTextBoxColumn1.Name = "donorZipDataGridViewTextBoxColumn1";
+            this.donorZipDataGridViewTextBoxColumn1.Width = 57;
+            // 
+            // donorsBindingSource
+            // 
+            this.donorsBindingSource.DataSource = typeof(Grizzlies_Helping_Grizzlies.Donors);
             // 
             // tabPageAddDonations
             // 
@@ -569,10 +704,10 @@
             this.tabPageAddDonations.Controls.Add(this.labelDoDate);
             this.tabPageAddDonations.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F);
             this.tabPageAddDonations.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tabPageAddDonations.Location = new System.Drawing.Point(4, 29);
+            this.tabPageAddDonations.Location = new System.Drawing.Point(4, 28);
             this.tabPageAddDonations.Name = "tabPageAddDonations";
             this.tabPageAddDonations.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAddDonations.Size = new System.Drawing.Size(1062, 511);
+            this.tabPageAddDonations.Size = new System.Drawing.Size(1053, 410);
             this.tabPageAddDonations.TabIndex = 0;
             this.tabPageAddDonations.Text = "Donations";
             // 
@@ -584,7 +719,7 @@
             this.dateTimePickerDo.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerDo.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerDo.Name = "dateTimePickerDo";
-            this.dateTimePickerDo.Size = new System.Drawing.Size(251, 44);
+            this.dateTimePickerDo.Size = new System.Drawing.Size(32664, 32);
             this.dateTimePickerDo.TabIndex = 37;
             this.toolTip2.SetToolTip(this.dateTimePickerDo, "When was the donation entered?");
             this.dateTimePickerDo.Value = new System.DateTime(2022, 4, 25, 0, 0, 0, 0);
@@ -599,7 +734,7 @@
             this.labelDoNum.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelDoNum.Location = new System.Drawing.Point(517, 158);
             this.labelDoNum.Name = "labelDoNum";
-            this.labelDoNum.Size = new System.Drawing.Size(27, 32);
+            this.labelDoNum.Size = new System.Drawing.Size(19, 22);
             this.labelDoNum.TabIndex = 36;
             this.labelDoNum.Text = "1";
             // 
@@ -613,7 +748,7 @@
             this.labelDoDesc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelDoDesc.Location = new System.Drawing.Point(74, 202);
             this.labelDoDesc.Name = "labelDoDesc";
-            this.labelDoDesc.Size = new System.Drawing.Size(137, 32);
+            this.labelDoDesc.Size = new System.Drawing.Size(89, 22);
             this.labelDoDesc.TabIndex = 28;
             this.labelDoDesc.Text = "Description";
             // 
@@ -639,7 +774,7 @@
             0,
             0});
             this.numBoxValue.Name = "numBoxValue";
-            this.numBoxValue.Size = new System.Drawing.Size(251, 44);
+            this.numBoxValue.Size = new System.Drawing.Size(251, 32);
             this.numBoxValue.TabIndex = 27;
             this.numBoxValue.ThousandsSeparator = true;
             this.toolTip1.SetToolTip(this.numBoxValue, "Please enter the dollar value of the donation.");
@@ -654,7 +789,7 @@
             0,
             0});
             this.numBoxDrID.Name = "numBoxDrID";
-            this.numBoxDrID.Size = new System.Drawing.Size(251, 44);
+            this.numBoxDrID.Size = new System.Drawing.Size(251, 32);
             this.numBoxDrID.TabIndex = 26;
             this.toolTip2.SetToolTip(this.numBoxDrID, "What is the ID of the Donor?");
             // 
@@ -684,7 +819,7 @@
             "Toys"});
             this.comboBoxDoType.Location = new System.Drawing.Point(631, 33);
             this.comboBoxDoType.Name = "comboBoxDoType";
-            this.comboBoxDoType.Size = new System.Drawing.Size(250, 38);
+            this.comboBoxDoType.Size = new System.Drawing.Size(250, 28);
             this.comboBoxDoType.TabIndex = 0;
             this.toolTip1.SetToolTip(this.comboBoxDoType, "Please select the correct Donation Type.");
             // 
@@ -712,7 +847,7 @@
             this.labelDoId.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelDoId.Location = new System.Drawing.Point(413, 158);
             this.labelDoId.Name = "labelDoId";
-            this.labelDoId.Size = new System.Drawing.Size(157, 32);
+            this.labelDoId.Size = new System.Drawing.Size(102, 22);
             this.labelDoId.TabIndex = 10;
             this.labelDoId.Text = "Donation ID:";
             // 
@@ -726,7 +861,7 @@
             this.labelDoType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelDoType.Location = new System.Drawing.Point(511, 36);
             this.labelDoType.Name = "labelDoType";
-            this.labelDoType.Size = new System.Drawing.Size(173, 32);
+            this.labelDoType.Size = new System.Drawing.Size(113, 22);
             this.labelDoType.TabIndex = 1;
             this.labelDoType.Text = "Donation Type";
             // 
@@ -740,7 +875,7 @@
             this.labelDoValue.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelDoValue.Location = new System.Drawing.Point(576, 93);
             this.labelDoValue.Name = "labelDoValue";
-            this.labelDoValue.Size = new System.Drawing.Size(73, 32);
+            this.labelDoValue.Size = new System.Drawing.Size(48, 22);
             this.labelDoValue.TabIndex = 4;
             this.labelDoValue.Text = "Value";
             // 
@@ -754,7 +889,7 @@
             this.labelDoDonorID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelDoDonorID.Location = new System.Drawing.Point(84, 36);
             this.labelDoDonorID.Name = "labelDoDonorID";
-            this.labelDoDonorID.Size = new System.Drawing.Size(120, 32);
+            this.labelDoDonorID.Size = new System.Drawing.Size(79, 22);
             this.labelDoDonorID.TabIndex = 2;
             this.labelDoDonorID.Text = "Donor ID";
             // 
@@ -768,16 +903,16 @@
             this.labelDoDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelDoDate.Location = new System.Drawing.Point(110, 93);
             this.labelDoDate.Name = "labelDoDate";
-            this.labelDoDate.Size = new System.Drawing.Size(65, 32);
+            this.labelDoDate.Size = new System.Drawing.Size(43, 22);
             this.labelDoDate.TabIndex = 3;
             this.labelDoDate.Text = "Date";
             // 
             // tabPageViewDonations
             // 
             this.tabPageViewDonations.Controls.Add(this.dataGridDonations);
-            this.tabPageViewDonations.Location = new System.Drawing.Point(4, 37);
+            this.tabPageViewDonations.Location = new System.Drawing.Point(4, 28);
             this.tabPageViewDonations.Name = "tabPageViewDonations";
-            this.tabPageViewDonations.Size = new System.Drawing.Size(1062, 503);
+            this.tabPageViewDonations.Size = new System.Drawing.Size(1053, 410);
             this.tabPageViewDonations.TabIndex = 5;
             this.tabPageViewDonations.Text = "Donation List";
             this.tabPageViewDonations.UseVisualStyleBackColor = true;
@@ -803,9 +938,70 @@
             this.dataGridDonations.Name = "dataGridDonations";
             this.dataGridDonations.RowHeadersWidth = 62;
             this.dataGridDonations.RowTemplate.Height = 28;
-            this.dataGridDonations.Size = new System.Drawing.Size(1062, 503);
+            this.dataGridDonations.Size = new System.Drawing.Size(1053, 410);
             this.dataGridDonations.TabIndex = 0;
             this.toolTip1.SetToolTip(this.dataGridDonations, "List of all donations made.");
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "DonationID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 52;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DonorID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "DonorID";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "DonationDate";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 66;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DonationValue";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Value";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 71;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "DonationType";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Type";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 68;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "DonationDescription";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 112;
+            // 
+            // donationsBindingSource
+            // 
+            this.donationsBindingSource.DataSource = typeof(Grizzlies_Helping_Grizzlies.Donations);
+            // 
+            // tabPageMailingList
+            // 
+            this.tabPageMailingList.Location = new System.Drawing.Point(4, 28);
+            this.tabPageMailingList.Name = "tabPageMailingList";
+            this.tabPageMailingList.Size = new System.Drawing.Size(1053, 410);
+            this.tabPageMailingList.TabIndex = 6;
+            this.tabPageMailingList.Text = "Mailing List";
+            this.tabPageMailingList.UseVisualStyleBackColor = true;
             // 
             // anonymousDataGridViewCheckBoxColumn
             // 
@@ -909,179 +1105,61 @@
             // 
             this.toolTip2.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip2_Popup);
             // 
-            // donorNumberDataGridViewTextBoxColumn
+            // labelUsr
             // 
-            this.donorNumberDataGridViewTextBoxColumn.DataPropertyName = "DonorNumber";
-            this.donorNumberDataGridViewTextBoxColumn.HeaderText = "Number";
-            this.donorNumberDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.donorNumberDataGridViewTextBoxColumn.Name = "donorNumberDataGridViewTextBoxColumn";
-            this.donorNumberDataGridViewTextBoxColumn.Width = 129;
+            this.labelUsr.AutoSize = true;
+            this.labelUsr.Location = new System.Drawing.Point(424, 86);
+            this.labelUsr.Name = "labelUsr";
+            this.labelUsr.Size = new System.Drawing.Size(76, 19);
+            this.labelUsr.TabIndex = 1;
+            this.labelUsr.Text = "Username";
             // 
-            // anonymousDataGridViewCheckBoxColumn1
+            // labelPwd
             // 
-            this.anonymousDataGridViewCheckBoxColumn1.DataPropertyName = "Anonymous";
-            this.anonymousDataGridViewCheckBoxColumn1.HeaderText = "Anonymous";
-            this.anonymousDataGridViewCheckBoxColumn1.MinimumWidth = 8;
-            this.anonymousDataGridViewCheckBoxColumn1.Name = "anonymousDataGridViewCheckBoxColumn1";
-            this.anonymousDataGridViewCheckBoxColumn1.Width = 135;
+            this.labelPwd.AutoSize = true;
+            this.labelPwd.Location = new System.Drawing.Point(429, 157);
+            this.labelPwd.Name = "labelPwd";
+            this.labelPwd.Size = new System.Drawing.Size(71, 19);
+            this.labelPwd.TabIndex = 2;
+            this.labelPwd.Text = "Password";
             // 
-            // donorTypeDataGridViewTextBoxColumn1
+            // textBoxUsr
             // 
-            this.donorTypeDataGridViewTextBoxColumn1.DataPropertyName = "DonorType";
-            this.donorTypeDataGridViewTextBoxColumn1.HeaderText = "Type";
-            this.donorTypeDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorTypeDataGridViewTextBoxColumn1.Name = "donorTypeDataGridViewTextBoxColumn1";
-            this.donorTypeDataGridViewTextBoxColumn1.Width = 99;
+            this.textBoxUsr.Location = new System.Drawing.Point(505, 83);
+            this.textBoxUsr.Name = "textBoxUsr";
+            this.textBoxUsr.Size = new System.Drawing.Size(100, 31);
+            this.textBoxUsr.TabIndex = 3;
             // 
-            // donorCompanyNameDataGridViewTextBoxColumn1
+            // textBoxPwd
             // 
-            this.donorCompanyNameDataGridViewTextBoxColumn1.DataPropertyName = "DonorCompanyName";
-            this.donorCompanyNameDataGridViewTextBoxColumn1.HeaderText = "Company";
-            this.donorCompanyNameDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorCompanyNameDataGridViewTextBoxColumn1.Name = "donorCompanyNameDataGridViewTextBoxColumn1";
-            this.donorCompanyNameDataGridViewTextBoxColumn1.Width = 143;
-            // 
-            // donorLastNameDataGridViewTextBoxColumn1
-            // 
-            this.donorLastNameDataGridViewTextBoxColumn1.DataPropertyName = "DonorLastName";
-            this.donorLastNameDataGridViewTextBoxColumn1.HeaderText = "Last";
-            this.donorLastNameDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorLastNameDataGridViewTextBoxColumn1.Name = "donorLastNameDataGridViewTextBoxColumn1";
-            this.donorLastNameDataGridViewTextBoxColumn1.Width = 90;
-            // 
-            // donorFirstNameDataGridViewTextBoxColumn1
-            // 
-            this.donorFirstNameDataGridViewTextBoxColumn1.DataPropertyName = "DonorFirstName";
-            this.donorFirstNameDataGridViewTextBoxColumn1.HeaderText = "First";
-            this.donorFirstNameDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorFirstNameDataGridViewTextBoxColumn1.Name = "donorFirstNameDataGridViewTextBoxColumn1";
-            this.donorFirstNameDataGridViewTextBoxColumn1.Width = 93;
-            // 
-            // donorPhoneNumberDataGridViewTextBoxColumn1
-            // 
-            this.donorPhoneNumberDataGridViewTextBoxColumn1.DataPropertyName = "DonorPhoneNumber";
-            this.donorPhoneNumberDataGridViewTextBoxColumn1.HeaderText = "Phone";
-            this.donorPhoneNumberDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorPhoneNumberDataGridViewTextBoxColumn1.Name = "donorPhoneNumberDataGridViewTextBoxColumn1";
-            this.donorPhoneNumberDataGridViewTextBoxColumn1.Width = 111;
-            // 
-            // donorEmailDataGridViewTextBoxColumn1
-            // 
-            this.donorEmailDataGridViewTextBoxColumn1.DataPropertyName = "DonorEmail";
-            this.donorEmailDataGridViewTextBoxColumn1.HeaderText = "Email";
-            this.donorEmailDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorEmailDataGridViewTextBoxColumn1.Name = "donorEmailDataGridViewTextBoxColumn1";
-            this.donorEmailDataGridViewTextBoxColumn1.Width = 104;
-            // 
-            // donorAddressDataGridViewTextBoxColumn1
-            // 
-            this.donorAddressDataGridViewTextBoxColumn1.DataPropertyName = "DonorAddress";
-            this.donorAddressDataGridViewTextBoxColumn1.HeaderText = "Address";
-            this.donorAddressDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorAddressDataGridViewTextBoxColumn1.Name = "donorAddressDataGridViewTextBoxColumn1";
-            this.donorAddressDataGridViewTextBoxColumn1.Width = 126;
-            // 
-            // donorCityDataGridViewTextBoxColumn1
-            // 
-            this.donorCityDataGridViewTextBoxColumn1.DataPropertyName = "DonorCity";
-            this.donorCityDataGridViewTextBoxColumn1.HeaderText = "City";
-            this.donorCityDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorCityDataGridViewTextBoxColumn1.Name = "donorCityDataGridViewTextBoxColumn1";
-            this.donorCityDataGridViewTextBoxColumn1.Width = 89;
-            // 
-            // donorStateDataGridViewTextBoxColumn1
-            // 
-            this.donorStateDataGridViewTextBoxColumn1.DataPropertyName = "DonorState";
-            this.donorStateDataGridViewTextBoxColumn1.HeaderText = "State";
-            this.donorStateDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorStateDataGridViewTextBoxColumn1.Name = "donorStateDataGridViewTextBoxColumn1";
-            this.donorStateDataGridViewTextBoxColumn1.Width = 98;
-            // 
-            // donorZipDataGridViewTextBoxColumn1
-            // 
-            this.donorZipDataGridViewTextBoxColumn1.DataPropertyName = "DonorZip";
-            this.donorZipDataGridViewTextBoxColumn1.HeaderText = "Zip";
-            this.donorZipDataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.donorZipDataGridViewTextBoxColumn1.Name = "donorZipDataGridViewTextBoxColumn1";
-            this.donorZipDataGridViewTextBoxColumn1.Width = 81;
-            // 
-            // donorsBindingSource
-            // 
-            this.donorsBindingSource.DataSource = typeof(Grizzlies_Helping_Grizzlies.Donors);
-            // 
-            // donationsBindingSource
-            // 
-            this.donationsBindingSource.DataSource = typeof(Grizzlies_Helping_Grizzlies.Donations);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "DonationID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 74;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DonorID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "DonorID";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 138;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "DonationDate";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 96;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DonationValue";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Value";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 104;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "DonationType";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Type";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 99;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "DonationDescription";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 163;
+            this.textBoxPwd.Location = new System.Drawing.Point(506, 154);
+            this.textBoxPwd.Name = "textBoxPwd";
+            this.textBoxPwd.Size = new System.Drawing.Size(100, 31);
+            this.textBoxPwd.TabIndex = 4;
             // 
             // GHGForm
             // 
-            this.ClientSize = new System.Drawing.Size(1069, 442);
+            this.ClientSize = new System.Drawing.Size(1061, 442);
             this.Controls.Add(this.tabControl);
             this.Font = new System.Drawing.Font("Yu Mincho", 11F);
             this.Name = "GHGForm";
             this.Text = "Grizzlies Helping Grizzlies";
             this.tabControl.ResumeLayout(false);
+            this.tabPageLogin.ResumeLayout(false);
+            this.tabPageLogin.PerformLayout();
             this.tabPageAddDonors.ResumeLayout(false);
             this.tabPageAddDonors.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMascot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxDrZip)).EndInit();
             this.tabPageViewDonors.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDonor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource)).EndInit();
             this.tabPageAddDonations.ResumeLayout(false);
             this.tabPageAddDonations.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numBoxValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBoxDrID)).EndInit();
             this.tabPageViewDonations.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDonations)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donationsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1176,6 +1254,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.TabPage tabPageLogin;
+        private System.Windows.Forms.TabPage tabPageMailingList;
+        private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.TextBox textBoxPwd;
+        private System.Windows.Forms.TextBox textBoxUsr;
+        private System.Windows.Forms.Label labelPwd;
+        private System.Windows.Forms.Label labelUsr;
     }
 }
 

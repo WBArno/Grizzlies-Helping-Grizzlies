@@ -230,8 +230,8 @@ namespace Grizzlies_Helping_Grizzlies
             }
             else return true;
         }
-        
-        
+
+
         /* ConfirmationBox
          * Simple Method that asks whether the person would like to submit and returns their answer
          * - Returns: bool of the user's choice of whether to continue
