@@ -64,5 +64,15 @@ namespace Grizzlies_Helping_Grizzlies
             DonorState = donorState;
             DonorZip = Convert.ToInt32(donorZip);
         }
+
+        public string donorType(bool isType)
+        {
+            if (isType) // Checking for individual/Company
+            {
+                return DonorType;
+            }
+
+            return DonorType;
+        }
     }
 }

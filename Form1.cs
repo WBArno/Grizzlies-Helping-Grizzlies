@@ -33,7 +33,15 @@ namespace Grizzlies_Helping_Grizzlies
             }
             labelDoNum.Text = Convert.ToString(lib.donationNumber + 1);
 
+            labelClothingCount.Text = Convert.ToString(lib.donationTypes[0]);
+            labelFoodCount.Text = Convert.ToString(lib.donationTypes[1]);
+            labelMoneyCount.Text = Convert.ToString(lib.donationTypes[2]);
+            labelToyCt.Text = Convert.ToString(lib.donationTypes[3]);
+            labelDoToVal.Text = Convert.ToString(lib.donationTotalVal);
+
             logInPage(true);  // Hides initial tabs for login form
+
+
         }
         
         Lib lib = new Lib();
@@ -60,6 +68,7 @@ namespace Grizzlies_Helping_Grizzlies
                 lib.donorNumber ++;
                 labelDrNum.Text = Convert.ToString(lib.donorNumber + 1);
                 
+
                 Donors DrObj = new Donors(comboBoxDrType.Text, textBoxDrFName.Text, textBoxDrLName.Text, textBoxDrCompany.Text,
                     textBoxDrEmail.Text, Convert.ToInt64(textBoxDrPNumber.Text), textBoxDrAddress.Text, textBoxDrCity.Text, textBoxDrState.Text,
                     Convert.ToInt32(textBoxDrZip.Text), checkBoxAnon.Checked, lib.donorNumber);
@@ -74,6 +83,29 @@ namespace Grizzlies_Helping_Grizzlies
             {
                 lib.donationNumber ++;
                 labelDoNum.Text = Convert.ToString(lib.donationNumber + 1);
+
+                if (comboBoxDoType.Text == "Clothing")
+                {
+                    lib.donationTypes[0]++;
+                    labelClothingCount.Text = Convert.ToString(lib.donationTypes[0]);
+                }
+                else if (comboBoxDoType.Text == "Food")
+                {
+                    lib.donationTypes[1]++;
+                    labelFoodCount.Text = Convert.ToString(lib.donationTypes[1]);
+                }
+                else if (comboBoxDoType.Text == "Money")
+                {
+                    lib.donationTypes[2]++;
+                    labelMoneyCount.Text = Convert.ToString(lib.donationTypes[2]);
+                }
+                else
+                {
+                    lib.donationTypes[3]++;
+                    labelToyCt.Text = Convert.ToString(lib.donationTypes[3]);
+                }
+                lib.donationTotalVal += Convert.ToDouble(numBoxValue.Value);
+                labelDoToVal.Text = Convert.ToString(lib.donationTotalVal);
 
                 Donations DoObj = new Donations(lib.donationNumber, numBoxDrID.Value, 
                     Convert.ToString(dateTimePickerDo.Value).Substring(0, Convert.ToString(dateTimePickerDo.Value).IndexOf(" ")), 
@@ -115,7 +147,6 @@ namespace Grizzlies_Helping_Grizzlies
         private void toolTip1_Popup(object sender, PopupEventArgs e) {}
         private void toolTip2_Popup(object sender, PopupEventArgs e) {} // Why are there two toolTips?
 
-        
 
         /* clearFields
          * Clears text fields of either donor or donation page dependent upon argument
@@ -193,6 +224,7 @@ namespace Grizzlies_Helping_Grizzlies
                 logInPage(false);
             }
         }
+        
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -231,6 +263,5 @@ namespace Grizzlies_Helping_Grizzlies
         {
             logInPage(true);
         }
-
     }
 }

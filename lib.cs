@@ -20,6 +20,10 @@ namespace Grizzlies_Helping_Grizzlies
         // Init program-wide vars. TODO: Change to Get-Set rather than making everything public. (?)
         public int donorNumber = 0;
         public int donationNumber = 0;
+        public int individualCount = 0;
+        public int companyCount = 0;
+        public int[] donationTypes = new int[4];
+        public double donationTotalVal = 0.00;
 
 
 
@@ -87,6 +91,8 @@ namespace Grizzlies_Helping_Grizzlies
                                 break;
                             case 2:
                                 donorCompanyName = dVal;
+                                if (donorCompanyName != "") { companyCount++; }
+                                else { individualCount++;}
                                 break;
                             case 3:
                                 donorLastName = dVal;
@@ -129,9 +135,26 @@ namespace Grizzlies_Helping_Grizzlies
                                 break;
                             case 2:
                                 donationValue = Convert.ToDecimal(dVal);
+                                donationTotalVal += Convert.ToDouble(dVal);
                                 break;
                             case 3:
                                 donationType = dVal;
+                                if (dVal == "Clothing")
+                                {
+                                    donationTypes[0]++;
+                                }
+                                else if (dVal == "Food")
+                                {
+                                    donationTypes[1]++;
+                                }
+                                else if (dVal == "Money")
+                                {
+                                    donationTypes[2]++;
+                                }
+                                else
+                                {
+                                    donationTypes[3]++;
+                                }
                                 break;
                             case 4:
                                 donationDescription = dVal;
@@ -255,9 +278,6 @@ namespace Grizzlies_Helping_Grizzlies
         }
 
 
-
-
-
         public bool isValidAddress(string emailAddress)
         {
             int atCount = 0;
@@ -285,5 +305,6 @@ namespace Grizzlies_Helping_Grizzlies
             }
             else { return true; }
         }
+
     }
 }

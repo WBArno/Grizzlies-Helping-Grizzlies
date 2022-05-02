@@ -101,6 +101,18 @@
             this.labelDoDonorID = new System.Windows.Forms.Label();
             this.labelDoDate = new System.Windows.Forms.Label();
             this.tabPageViewDonations = new System.Windows.Forms.TabPage();
+            this.splitContainerDL = new System.Windows.Forms.SplitContainer();
+            this.labelDoToVal = new System.Windows.Forms.Label();
+            this.labelDoTV = new System.Windows.Forms.Label();
+            this.labelMoneyCount = new System.Windows.Forms.Label();
+            this.labelDoCtMoney = new System.Windows.Forms.Label();
+            this.labelFoodCount = new System.Windows.Forms.Label();
+            this.labelDoCtFood = new System.Windows.Forms.Label();
+            this.labelClothingCount = new System.Windows.Forms.Label();
+            this.labelDoCtClothing = new System.Windows.Forms.Label();
+            this.labelToyCt = new System.Windows.Forms.Label();
+            this.labelDoCtToy = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.buttonLODoList = new System.Windows.Forms.Button();
             this.dataGridDonations = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -133,7 +145,6 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.splitContainerDL = new System.Windows.Forms.SplitContainer();
             this.tabControl.SuspendLayout();
             this.tabPageLogin.SuspendLayout();
             this.tabPageAddDonors.SuspendLayout();
@@ -146,6 +157,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numBoxValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBoxDrID)).BeginInit();
             this.tabPageViewDonations.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerDL)).BeginInit();
+            this.splitContainerDL.Panel1.SuspendLayout();
+            this.splitContainerDL.Panel2.SuspendLayout();
+            this.splitContainerDL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDonations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donationsBindingSource)).BeginInit();
             this.tabPageMailingList.SuspendLayout();
@@ -154,9 +169,6 @@
             this.splitContainerMail.Panel2.SuspendLayout();
             this.splitContainerMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mailingListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerDL)).BeginInit();
-            this.splitContainerDL.Panel2.SuspendLayout();
-            this.splitContainerDL.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -1032,7 +1044,6 @@
             // tabPageViewDonations
             // 
             this.tabPageViewDonations.Controls.Add(this.splitContainerDL);
-            this.tabPageViewDonations.Controls.Add(this.buttonLODoList);
             this.tabPageViewDonations.Location = new System.Drawing.Point(4, 28);
             this.tabPageViewDonations.Name = "tabPageViewDonations";
             this.tabPageViewDonations.Size = new System.Drawing.Size(1053, 410);
@@ -1040,12 +1051,197 @@
             this.tabPageViewDonations.Text = "Donation List";
             this.tabPageViewDonations.UseVisualStyleBackColor = true;
             // 
+            // splitContainerDL
+            // 
+            this.splitContainerDL.BackColor = System.Drawing.Color.SeaGreen;
+            this.splitContainerDL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerDL.ForeColor = System.Drawing.SystemColors.Control;
+            this.splitContainerDL.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerDL.Name = "splitContainerDL";
+            // 
+            // splitContainerDL.Panel1
+            // 
+            this.splitContainerDL.Panel1.Controls.Add(this.labelDoToVal);
+            this.splitContainerDL.Panel1.Controls.Add(this.labelDoTV);
+            this.splitContainerDL.Panel1.Controls.Add(this.labelMoneyCount);
+            this.splitContainerDL.Panel1.Controls.Add(this.labelDoCtMoney);
+            this.splitContainerDL.Panel1.Controls.Add(this.labelFoodCount);
+            this.splitContainerDL.Panel1.Controls.Add(this.labelDoCtFood);
+            this.splitContainerDL.Panel1.Controls.Add(this.labelClothingCount);
+            this.splitContainerDL.Panel1.Controls.Add(this.labelDoCtClothing);
+            this.splitContainerDL.Panel1.Controls.Add(this.labelToyCt);
+            this.splitContainerDL.Panel1.Controls.Add(this.labelDoCtToy);
+            this.splitContainerDL.Panel1.Controls.Add(this.label2);
+            this.splitContainerDL.Panel1.Controls.Add(this.buttonLODoList);
+            // 
+            // splitContainerDL.Panel2
+            // 
+            this.splitContainerDL.Panel2.Controls.Add(this.dataGridDonations);
+            this.splitContainerDL.Size = new System.Drawing.Size(1053, 410);
+            this.splitContainerDL.SplitterDistance = 248;
+            this.splitContainerDL.TabIndex = 40;
+            // 
+            // labelDoToVal
+            // 
+            this.labelDoToVal.AutoSize = true;
+            this.labelDoToVal.BackColor = System.Drawing.Color.Teal;
+            this.labelDoToVal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelDoToVal.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelDoToVal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelDoToVal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelDoToVal.Location = new System.Drawing.Point(192, 278);
+            this.labelDoToVal.Name = "labelDoToVal";
+            this.labelDoToVal.Size = new System.Drawing.Size(19, 22);
+            this.labelDoToVal.TabIndex = 55;
+            this.labelDoToVal.Text = "1";
+            // 
+            // labelDoTV
+            // 
+            this.labelDoTV.AutoSize = true;
+            this.labelDoTV.BackColor = System.Drawing.Color.Teal;
+            this.labelDoTV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelDoTV.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelDoTV.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelDoTV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelDoTV.Location = new System.Drawing.Point(8, 278);
+            this.labelDoTV.Name = "labelDoTV";
+            this.labelDoTV.Size = new System.Drawing.Size(92, 22);
+            this.labelDoTV.TabIndex = 54;
+            this.labelDoTV.Text = "Total Value:";
+            // 
+            // labelMoneyCount
+            // 
+            this.labelMoneyCount.AutoSize = true;
+            this.labelMoneyCount.BackColor = System.Drawing.Color.Teal;
+            this.labelMoneyCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelMoneyCount.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelMoneyCount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelMoneyCount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelMoneyCount.Location = new System.Drawing.Point(192, 221);
+            this.labelMoneyCount.Name = "labelMoneyCount";
+            this.labelMoneyCount.Size = new System.Drawing.Size(19, 22);
+            this.labelMoneyCount.TabIndex = 53;
+            this.labelMoneyCount.Text = "1";
+            // 
+            // labelDoCtMoney
+            // 
+            this.labelDoCtMoney.AutoSize = true;
+            this.labelDoCtMoney.BackColor = System.Drawing.Color.Teal;
+            this.labelDoCtMoney.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelDoCtMoney.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelDoCtMoney.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelDoCtMoney.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelDoCtMoney.Location = new System.Drawing.Point(8, 221);
+            this.labelDoCtMoney.Name = "labelDoCtMoney";
+            this.labelDoCtMoney.Size = new System.Drawing.Size(153, 22);
+            this.labelDoCtMoney.TabIndex = 52;
+            this.labelDoCtMoney.Text = "Monetary Donations:";
+            // 
+            // labelFoodCount
+            // 
+            this.labelFoodCount.AutoSize = true;
+            this.labelFoodCount.BackColor = System.Drawing.Color.Teal;
+            this.labelFoodCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelFoodCount.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelFoodCount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelFoodCount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelFoodCount.Location = new System.Drawing.Point(192, 169);
+            this.labelFoodCount.Name = "labelFoodCount";
+            this.labelFoodCount.Size = new System.Drawing.Size(19, 22);
+            this.labelFoodCount.TabIndex = 51;
+            this.labelFoodCount.Text = "1";
+            // 
+            // labelDoCtFood
+            // 
+            this.labelDoCtFood.AutoSize = true;
+            this.labelDoCtFood.BackColor = System.Drawing.Color.Teal;
+            this.labelDoCtFood.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelDoCtFood.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelDoCtFood.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelDoCtFood.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelDoCtFood.Location = new System.Drawing.Point(8, 169);
+            this.labelDoCtFood.Name = "labelDoCtFood";
+            this.labelDoCtFood.Size = new System.Drawing.Size(118, 22);
+            this.labelDoCtFood.TabIndex = 50;
+            this.labelDoCtFood.Text = "Food Donations";
+            // 
+            // labelClothingCount
+            // 
+            this.labelClothingCount.AutoSize = true;
+            this.labelClothingCount.BackColor = System.Drawing.Color.Teal;
+            this.labelClothingCount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelClothingCount.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelClothingCount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelClothingCount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelClothingCount.Location = new System.Drawing.Point(192, 120);
+            this.labelClothingCount.Name = "labelClothingCount";
+            this.labelClothingCount.Size = new System.Drawing.Size(19, 22);
+            this.labelClothingCount.TabIndex = 49;
+            this.labelClothingCount.Text = "1";
+            // 
+            // labelDoCtClothing
+            // 
+            this.labelDoCtClothing.AutoSize = true;
+            this.labelDoCtClothing.BackColor = System.Drawing.Color.Teal;
+            this.labelDoCtClothing.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelDoCtClothing.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelDoCtClothing.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelDoCtClothing.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelDoCtClothing.Location = new System.Drawing.Point(8, 120);
+            this.labelDoCtClothing.Name = "labelDoCtClothing";
+            this.labelDoCtClothing.Size = new System.Drawing.Size(147, 22);
+            this.labelDoCtClothing.TabIndex = 48;
+            this.labelDoCtClothing.Text = "Clothing Donations:";
+            // 
+            // labelToyCt
+            // 
+            this.labelToyCt.AutoSize = true;
+            this.labelToyCt.BackColor = System.Drawing.Color.Teal;
+            this.labelToyCt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelToyCt.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelToyCt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelToyCt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelToyCt.Location = new System.Drawing.Point(192, 71);
+            this.labelToyCt.Name = "labelToyCt";
+            this.labelToyCt.Size = new System.Drawing.Size(19, 22);
+            this.labelToyCt.TabIndex = 47;
+            this.labelToyCt.Text = "1";
+            // 
+            // labelDoCtToy
+            // 
+            this.labelDoCtToy.AutoSize = true;
+            this.labelDoCtToy.BackColor = System.Drawing.Color.Teal;
+            this.labelDoCtToy.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelDoCtToy.Font = new System.Drawing.Font("Yu Mincho Demibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelDoCtToy.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelDoCtToy.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelDoCtToy.Location = new System.Drawing.Point(8, 71);
+            this.labelDoCtToy.Name = "labelDoCtToy";
+            this.labelDoCtToy.Size = new System.Drawing.Size(115, 22);
+            this.labelDoCtToy.TabIndex = 46;
+            this.labelDoCtToy.Text = "Toy Donations:";
+            this.labelDoCtToy.UseMnemonic = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.DarkCyan;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label2.Font = new System.Drawing.Font("Yu Mincho Demibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(34, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(179, 27);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Donation Summary";
+            // 
             // buttonLODoList
             // 
             this.buttonLODoList.BackColor = System.Drawing.Color.SeaGreen;
             this.buttonLODoList.Font = new System.Drawing.Font("Yu Mincho", 11F);
             this.buttonLODoList.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonLODoList.Location = new System.Drawing.Point(3, 381);
+            this.buttonLODoList.Location = new System.Drawing.Point(3, 376);
             this.buttonLODoList.Name = "buttonLODoList";
             this.buttonLODoList.Size = new System.Drawing.Size(75, 26);
             this.buttonLODoList.TabIndex = 39;
@@ -1070,11 +1266,12 @@
             this.dataGridViewTextBoxColumn6});
             this.dataGridDonations.DataSource = this.donationsBindingSource;
             this.dataGridDonations.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridDonations.GridColor = System.Drawing.SystemColors.ControlText;
             this.dataGridDonations.Location = new System.Drawing.Point(0, 0);
             this.dataGridDonations.Name = "dataGridDonations";
             this.dataGridDonations.RowHeadersWidth = 62;
             this.dataGridDonations.RowTemplate.Height = 28;
-            this.dataGridDonations.Size = new System.Drawing.Size(698, 410);
+            this.dataGridDonations.Size = new System.Drawing.Size(801, 410);
             this.dataGridDonations.TabIndex = 0;
             this.toolTip1.SetToolTip(this.dataGridDonations, "List of all donations made.");
             // 
@@ -1344,21 +1541,6 @@
             // 
             this.toolTip2.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip2_Popup);
             // 
-            // splitContainerDL
-            // 
-            this.splitContainerDL.BackColor = System.Drawing.Color.SeaGreen;
-            this.splitContainerDL.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerDL.ForeColor = System.Drawing.SystemColors.Control;
-            this.splitContainerDL.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerDL.Name = "splitContainerDL";
-            // 
-            // splitContainerDL.Panel2
-            // 
-            this.splitContainerDL.Panel2.Controls.Add(this.dataGridDonations);
-            this.splitContainerDL.Size = new System.Drawing.Size(1053, 410);
-            this.splitContainerDL.SplitterDistance = 351;
-            this.splitContainerDL.TabIndex = 40;
-            // 
             // GHGForm
             // 
             this.ClientSize = new System.Drawing.Size(1061, 442);
@@ -1381,6 +1563,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numBoxValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numBoxDrID)).EndInit();
             this.tabPageViewDonations.ResumeLayout(false);
+            this.splitContainerDL.Panel1.ResumeLayout(false);
+            this.splitContainerDL.Panel1.PerformLayout();
+            this.splitContainerDL.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerDL)).EndInit();
+            this.splitContainerDL.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDonations)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donationsBindingSource)).EndInit();
             this.tabPageMailingList.ResumeLayout(false);
@@ -1390,9 +1577,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMail)).EndInit();
             this.splitContainerMail.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mailingListBindingSource)).EndInit();
-            this.splitContainerDL.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerDL)).EndInit();
-            this.splitContainerDL.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1520,6 +1704,17 @@
         private System.Windows.Forms.CheckBox checkBoxML;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainerDL;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelDoToVal;
+        private System.Windows.Forms.Label labelDoTV;
+        private System.Windows.Forms.Label labelMoneyCount;
+        private System.Windows.Forms.Label labelDoCtMoney;
+        private System.Windows.Forms.Label labelFoodCount;
+        private System.Windows.Forms.Label labelDoCtFood;
+        private System.Windows.Forms.Label labelClothingCount;
+        private System.Windows.Forms.Label labelDoCtClothing;
+        private System.Windows.Forms.Label labelToyCt;
+        private System.Windows.Forms.Label labelDoCtToy;
     }
 }
 
